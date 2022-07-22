@@ -13,21 +13,6 @@ public class MainPageStep extends BaseStepDefinition {
 
     MainPage mainPage = new MainPage(driver);
 
-    @Given("I navigate to the main page")
-    public void i_navigate_to_main_page() {
-        driver.navigate().to(BASE_URL);
-    }
-
-    @And("I accept the data handling dialog box")
-    public void i_accept_the_data_handling_dialog_box() {
-        mainPage.acceptDataConsentPanel();
-    }
-
-    @And("I click on the Subscribe button")
-    public void i_click_on_the_subscribe_button() {
-        mainPage.clickOnSubscribeButton();
-    }
-
     @And("I choose 'Learn faster' newsletter")
     public void i_chose_learn_faster_newsletter_types() {
         mainPage.clickOnNewsLetterButtonFor("learn faster");
