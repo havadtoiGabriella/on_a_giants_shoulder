@@ -28,22 +28,22 @@ public class MainPageStep extends BaseStepDefinition {
         mainPage.clickOnSubscribeButton();
     }
 
-    @And("I chose 'Learn faster' newsletter")
+    @And("I choose 'Learn faster' newsletter")
     public void i_chose_learn_faster_newsletter_types() {
         mainPage.clickOnNewsLetterButtonFor("learn faster");
     }
 
-    @And("I chose 'Stop procrastinating' newsletter")
+    @And("I choose 'Stop procrastinating' newsletter")
     public void i_chose_stop_procrastinating_types() {
         mainPage.clickOnNewsLetterButtonFor("stop procrastinating");
     }
 
-    @And("I chose 'Reach your goals' newsletter")
+    @And("I choose 'Reach your goals' newsletter")
     public void i_chose_reach_your_goals_newsletter_types() {
         mainPage.clickOnNewsLetterButtonFor("reach your goals");
     }
 
-    @And("I chose 'Improve focus' newsletter")
+    @And("I choose 'Improve focus' newsletter")
     public void i_chose_improve_focus_newsletter_types() {
         mainPage.clickOnNewsLetterButtonFor("improve focus");
     }
@@ -61,7 +61,6 @@ public class MainPageStep extends BaseStepDefinition {
         mainPage.submitEmailFor("stop procrastinating");
         mainPage.waitForVisibilityOfEmailValidatedPopup();
     }
-
 
     @When("I enter my e-mail address for 'Reach your goals'")
     public void i_enter_my_email_address_for_reach_your_goals() {
