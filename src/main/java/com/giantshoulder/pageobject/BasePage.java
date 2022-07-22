@@ -6,7 +6,6 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * @author Gabriella_Havadtoi
  */
-
 public class BasePage {
 
     protected ChromeDriver driver;
@@ -15,5 +14,4 @@ public class BasePage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
 }
