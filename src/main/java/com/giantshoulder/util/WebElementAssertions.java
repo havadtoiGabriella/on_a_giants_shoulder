@@ -20,5 +20,4 @@ public final class WebElementAssertions {
         assertThat(element.getText())
                 .contains(expectedString);
     }
-
 }
