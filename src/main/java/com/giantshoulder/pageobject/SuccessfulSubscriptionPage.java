@@ -17,17 +17,16 @@ public class SuccessfulSubscriptionPage extends BasePage {
     }
 
     @FindBy(id = "row-132")
-    WebElement successfulSubscriptionMessageForLearnFaster;
+    private  WebElement successfulSubscriptionMessageForLearnFaster;
 
     @FindBy(id = "col-full-102-156-111")
-    WebElement successfulSubscriptionMessageForStopProcrastinating;
+    private  WebElement successfulSubscriptionMessageForStopProcrastinating;
 
     @FindBy(css = "#col-full-102-156 #tmp_headline1-98717-134")
-    WebElement successfulSubscriptionMessageForReachYourGoals;
+    private WebElement successfulSubscriptionMessageForReachYourGoals;
 
     @FindBy(css = "#col-full-102-156 #tmp_headline1-98717-134")
-    WebElement successfulSubscriptionMessageForImproveFocus;
-
+    private  WebElement successfulSubscriptionMessageForImproveFocus;
 
     public void validateSuccessMessageFor(String newsLetterType, String message) {
         switch (newsLetterType.toLowerCase()) {
