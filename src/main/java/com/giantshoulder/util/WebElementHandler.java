@@ -26,12 +26,6 @@ public class WebElementHandler {
         wait.withTimeout(ofSeconds(WAIT_TIMEOUT)).until(visibilityOf(element));
     }
 
-    public static void waitForElementToBeInVisible(String elementName, ChromeDriver driver, WebElement element) {
-        LOGGER.info("Waiting for '" + elementName + "' to be invisible.");
-        WebDriverWait wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
-        wait.withTimeout(ofSeconds(WAIT_TIMEOUT)).until(invisibilityOf(element));
-    }
-
     public static void clickOn(String elementName, ChromeDriver driver, WebElement element) {
         LOGGER.info("Clicking on '" + elementName + "'.");
         WebDriverWait wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
