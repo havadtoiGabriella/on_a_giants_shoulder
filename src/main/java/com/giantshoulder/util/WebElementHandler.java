@@ -17,7 +17,6 @@ public class WebElementHandler {
     private static final long WAIT_TIMEOUT = 5;
 
     private WebElementHandler() {
-
     }
 
     public static void waitForElementToBeVisible(String elementName, ChromeDriver driver, WebElement element) {

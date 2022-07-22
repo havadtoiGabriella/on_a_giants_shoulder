@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * @author Gabriella_Havadtoi
  */
-public class WebElementAssertions {
+public final class WebElementAssertions {
 
     private static final Logger LOGGER = new Logger(WebElementAssertions.class);
 
