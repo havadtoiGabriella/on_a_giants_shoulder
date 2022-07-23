@@ -5,7 +5,7 @@ import cucumber.api.java.en.Then;
 
 public class SuccessfulSubscriptionStep extends BaseStepDefinition {
 
-    SuccessfulSubscriptionPage successfulSubscriptionPage = new SuccessfulSubscriptionPage(driver);
+    private final SuccessfulSubscriptionPage successfulSubscriptionPage = new SuccessfulSubscriptionPage(driver);
 
     @Then("I should get a successful subscription {string} for learn faster")
     public void i_should_get_a_successful_subscription_message_for_learn_faster(String message) {

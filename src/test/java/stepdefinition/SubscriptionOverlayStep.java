@@ -6,7 +6,7 @@ import cucumber.api.java.en.When;
 
 public class SubscriptionOverlayStep extends BaseStepDefinition {
 
-    SubscriptionOverlay subscriptionOverlay = new SubscriptionOverlay(driver);
+    private final SubscriptionOverlay subscriptionOverlay = new SubscriptionOverlay(driver);
 
     @And("I choose 'Learn faster' newsletter")
     public void i_chose_learn_faster_newsletter_types() {
