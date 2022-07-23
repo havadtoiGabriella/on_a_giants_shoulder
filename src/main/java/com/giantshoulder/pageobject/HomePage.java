@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class MainPage extends BasePage {
+public class HomePage extends BasePage {
 
-    public MainPage(ChromeDriver driver) {
+    public HomePage(ChromeDriver driver) {
         super(driver);
     }
 
