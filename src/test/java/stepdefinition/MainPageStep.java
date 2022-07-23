@@ -30,28 +30,28 @@ public class MainPageStep extends BaseStepDefinition {
 
     @When("I enter my e-mail address for 'Learn faster'")
     public void i_enter_my_email_address_for_learn_faster() {
-        mainPage.fillEmailFieldFor("learn faster", "sample@gmail.com");
+        mainPage.fillEmailFieldFor("learn faster", "onagiantsshoulder@gmail.com");
         mainPage.submitEmailFor("learn faster");
         mainPage.waitForVisibilityOfEmailValidatedPopup();
     }
 
     @When("I enter my e-mail address for 'Stop procrastinating'")
     public void i_enter_my_email_address_for_stop_procrastinating() {
-        mainPage.fillEmailFieldFor("stop procrastinating", "sample@gmail.com");
+        mainPage.fillEmailFieldFor("stop procrastinating", "onagiantsshoulder@gmail.com");
         mainPage.submitEmailFor("stop procrastinating");
         mainPage.waitForVisibilityOfEmailValidatedPopup();
     }
 
     @When("I enter my e-mail address for 'Reach your goals'")
     public void i_enter_my_email_address_for_reach_your_goals() {
-        mainPage.fillEmailFieldFor("reach your goals", "sample@gmail.com");
+        mainPage.fillEmailFieldFor("reach your goals", "onagiantsshoulder@gmail.com");
         mainPage.submitEmailFor("reach your goals");
         mainPage.waitForVisibilityOfEmailValidatedPopup();
     }
 
     @When("I enter my e-mail address for 'Improve focus'")
     public void i_enter_my_email_address_for_improve_focus() {
-        mainPage.fillEmailFieldFor("improve focus", "sample@gmail.com");
+        mainPage.fillEmailFieldFor("improve focus", "onagiantsshoulder@gmail.com");
         mainPage.submitEmailFor("improve focus");
         mainPage.waitForVisibilityOfEmailValidatedPopup();
     }
