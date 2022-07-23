@@ -7,4 +7,3 @@ public class BaseStepDefinition {
     static final String BASE_URL = "https://www.lifehack.org/";
     ChromeDriver driver = getChromeDriver();
 }
-
