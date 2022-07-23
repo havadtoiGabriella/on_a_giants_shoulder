@@ -1,15 +1,10 @@
 package com.giantshoulder.util;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import com.giantshoulder.logger.Logger;
 import org.openqa.selenium.WebElement;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-/**
- * @author Gabriella_Havadtoi
- */
 public final class WebElementAssertions {
-
     private static final Logger LOGGER = new Logger(WebElementAssertions.class);
 
     private WebElementAssertions() {

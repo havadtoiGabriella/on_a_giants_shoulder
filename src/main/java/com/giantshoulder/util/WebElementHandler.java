@@ -1,17 +1,14 @@
 package com.giantshoulder.util;
 
+import static java.time.Duration.ofSeconds;
+import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 import com.giantshoulder.logger.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static java.time.Duration.ofSeconds;
-import static org.openqa.selenium.support.ui.ExpectedConditions.*;
-
-/**
- * @author Gabriella_Havadtoi
- */
-public class WebElementHandler {
+public final class WebElementHandler {
     private static final Logger LOGGER = new Logger(WebElementHandler.class);
     private static final long DEFAULT_TIMEOUT = 10;
     private static final long WAIT_TIMEOUT = 5;

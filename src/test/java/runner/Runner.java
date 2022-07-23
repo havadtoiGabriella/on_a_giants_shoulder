@@ -1,17 +1,13 @@
 package runner;
 
+import static com.giantshoulder.driver.Driver.closeDriver;
+import static com.giantshoulder.driver.Driver.initDriver;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.PickleEventWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 import org.testng.annotations.*;
 
-import static com.giantshoulder.driver.Driver.closeDriver;
-import static com.giantshoulder.driver.Driver.initDriver;
-
-/**
- * @author Zoltan_Limpek
- */
 @CucumberOptions(
         plugin = "pretty",
         glue = "stepdefinition",

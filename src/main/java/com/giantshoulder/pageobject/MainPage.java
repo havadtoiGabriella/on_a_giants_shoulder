@@ -1,14 +1,10 @@
 package com.giantshoulder.pageobject;
 
+import static com.giantshoulder.util.WebElementHandler.*;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 
-import static com.giantshoulder.util.WebElementHandler.*;
-
-/**
- * @author Gabriella_Havadtoi
- */
 public class MainPage extends BasePage {
 
     public MainPage(ChromeDriver driver) {
@@ -22,13 +18,13 @@ public class MainPage extends BasePage {
     private WebElement dataConsentButton;
 
     @FindBy(id = "element1294352-content")
-    private  WebElement dailyInspirationBoxTitle;
+    private WebElement dailyInspirationBoxTitle;
 
     @FindBy(id = "element1294352-content")
-    private  WebElement learnFasterNewsletterTypeButton;
+    private WebElement learnFasterNewsletterTypeButton;
 
     @FindBy(id = "element1294351-content")
-    private  WebElement stopProcrastinatingNewsletterTypeButton;
+    private WebElement stopProcrastinatingNewsletterTypeButton;
 
     @FindBy(id = "element1294355-content")
     private WebElement improveFocusNewsletterTypeButton;
@@ -37,13 +33,13 @@ public class MainPage extends BasePage {
     private WebElement reachYourGoalsNewsletterTypeButton;
 
     @FindBy(css = "#element1294344_form [data-field='email'] input")
-    private  WebElement emailInputFieldForLearnFaster;
+    private WebElement emailInputFieldForLearnFaster;
 
     @FindBy(css = "#element1294347_form [type='email']")
-    private  WebElement emailInputFieldForStopProcrastinating;
+    private WebElement emailInputFieldForStopProcrastinating;
 
     @FindBy(css = "#element1294338_form [type='email']")
-    private  WebElement emailInputFieldForReachYourGoals;
+    private WebElement emailInputFieldForReachYourGoals;
 
     @FindBy(css = "#element1294341_form [type='email']")
     private WebElement emailInputFieldForImproveFocus;
@@ -52,16 +48,16 @@ public class MainPage extends BasePage {
     private WebElement submitEmailButtonForLearnFaster;
 
     @FindBy(css = "button[data-element-id='1294347']")
-    private  WebElement submitEmailButtonForStopProcrastinating;
+    private WebElement submitEmailButtonForStopProcrastinating;
 
     @FindBy(css = "button[data-element-id='1294338']")
-    private  WebElement submitEmailButtonForReachYourGoals;
+    private WebElement submitEmailButtonForReachYourGoals;
 
     @FindBy(css = "button[data-element-id='1294341']")
-    private  WebElement submitEmailButtonForImproveFocus;
+    private WebElement submitEmailButtonForImproveFocus;
 
     @FindBy(css = "img[src*='big-success']")
-    private  WebElement emailValidatedPopup;
+    private WebElement emailValidatedPopup;
 
     public void clickOnSubscribeButton() {
         waitForElementToBeVisible("subscribe button", driver, subscribeButton);

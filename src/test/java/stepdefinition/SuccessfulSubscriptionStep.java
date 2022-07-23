@@ -3,9 +3,6 @@ package stepdefinition;
 import com.giantshoulder.pageobject.SuccessfulSubscriptionPage;
 import cucumber.api.java.en.Then;
 
-/**
- * @author Gabriella_Havadtoi
- */
 public class SuccessfulSubscriptionStep extends BaseStepDefinition {
 
     SuccessfulSubscriptionPage successfulSubscriptionPage = new SuccessfulSubscriptionPage(driver);

@@ -2,9 +2,6 @@ package com.giantshoulder.driver;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 
-/**
- * @author Zoltan_Limpek
- */
 public class Driver {
     private static ChromeDriver driver;
 

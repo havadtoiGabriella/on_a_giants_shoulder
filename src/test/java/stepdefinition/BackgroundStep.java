@@ -4,9 +4,6 @@ import com.giantshoulder.pageobject.MainPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 
-/**
- * @author Gabriella_Havadtoi
- */
 public class BackgroundStep extends BaseStepDefinition {
 
     MainPage mainPage = new MainPage(driver);

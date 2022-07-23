@@ -2,12 +2,7 @@ package stepdefinition;
 
 import com.giantshoulder.pageobject.MainPage;
 import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
-
-/**
- * @author Gabriella_Havadtoi
- */
 
 public class MainPageStep extends BaseStepDefinition {
 
