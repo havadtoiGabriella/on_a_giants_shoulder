@@ -1,6 +1,6 @@
 package com.giantshoulder.pageobject;
 
-import static com.giantshoulder.util.WebElementAssertions.elementTextContains;
+import static com.giantshoulder.util.WebElementAssertions.elementHasText;
 import static com.giantshoulder.util.WebElementHandler.waitForElementToBeVisible;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,24 +24,23 @@ public class SuccessfulSubscriptionPage extends BasePage {
     @FindBy(css = "#col-full-102-156 #tmp_headline1-98717-134")
     private WebElement successfulSubscriptionMessageForImproveFocus;
 
-    public void validateSuccessMessageFor(String newsLetterType, String message) {
-        switch (newsLetterType.toLowerCase()) {
-            case "learn faster":
-                waitForElementToBeVisible("success message for learn faster", driver, successfulSubscriptionMessageForLearnFaster);
-                elementTextContains(message, successfulSubscriptionMessageForLearnFaster, "subscription message for learn faster");
-                break;
-            case "reach your goals":
-                waitForElementToBeVisible("success message for reach your goals", driver, successfulSubscriptionMessageForReachYourGoals);
-                elementTextContains(message, successfulSubscriptionMessageForReachYourGoals, "subscription message for reach your goals");
-                break;
-            case "improve focus":
-                waitForElementToBeVisible("success message for improve focus", driver, successfulSubscriptionMessageForImproveFocus);
-                elementTextContains(message, successfulSubscriptionMessageForImproveFocus, "subscription message for improve focus");
-                break;
-            case "stop procrastinating":
-                waitForElementToBeVisible("success message for stop procrastinating", driver, successfulSubscriptionMessageForStopProcrastinating);
-                elementTextContains(message, successfulSubscriptionMessageForStopProcrastinating, "subscription message for stop procrastinating");
-                break;
-        }
+    public void validateSuccessMessageForLearnFaster(String message) {
+        waitForElementToBeVisible("success message for learn faster", driver, successfulSubscriptionMessageForLearnFaster);
+        elementHasText(message, successfulSubscriptionMessageForLearnFaster, "subscription message for learn faster");
+    }
+
+    public void validateSuccessMessageForReachYourGoals(String message) {
+        waitForElementToBeVisible("success message for reach your goals", driver, successfulSubscriptionMessageForReachYourGoals);
+        elementHasText(message, successfulSubscriptionMessageForReachYourGoals, "subscription message for reach your goals");
+    }
+
+    public void validateSuccessMessageForImproveFocus(String message) {
+        waitForElementToBeVisible("success message for improve focus", driver, successfulSubscriptionMessageForImproveFocus);
+        elementHasText(message, successfulSubscriptionMessageForImproveFocus, "subscription message for improve focus");
+    }
+
+    public void validateSuccessMessageForStopProcrastinating(String message) {
+        waitForElementToBeVisible("success message for stop procrastinating", driver, successfulSubscriptionMessageForStopProcrastinating);
+        elementHasText(message, successfulSubscriptionMessageForStopProcrastinating, "subscription message for stop procrastinating");
     }
 }

@@ -10,9 +10,9 @@ public final class WebElementAssertions {
     private WebElementAssertions() {
     }
 
-    public static void elementTextContains(String expectedString, WebElement element, String elementName) {
-        LOGGER.info("Validating if the " + elementName + " contains the text:  " + expectedString);
-        assertThat(element.getText())
-                .contains(expectedString);
+    public static void elementHasText(String expectedString, WebElement element, String elementName) {
+        LOGGER.info("Validating if the " + elementName + " has the text:  " + expectedString);
+        assertThat(element.getText().trim())
+                .isEqualTo(expectedString);
     }
 }
