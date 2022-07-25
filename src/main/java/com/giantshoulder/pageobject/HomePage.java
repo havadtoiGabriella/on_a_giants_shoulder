@@ -12,19 +12,25 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    @FindBy(id = "element3421730-content")
-    private WebElement subscribeButton;
-
     @FindBy(css = ".fc-button.fc-cta-consent.fc-primary-button")
     private WebElement dataConsentButton;
 
-    public void clickOnSubscribeButton() {
-        waitForElementToBeVisible("subscribe button", driver, subscribeButton);
-        clickOn("subscribe button", driver, subscribeButton);
-    }
+    @FindBy(id = "menu-item-849490")
+    private WebElement coursesMenuItem;
+
+    @FindBy(id = "menu-item-857782")
+    private WebElement freeClassesDropdownMenuItem;
 
     public void acceptDataConsentPanel() {
         waitForElementToBeVisible("consent button", driver, dataConsentButton);
         clickOn("data consent button", driver, dataConsentButton);
+    }
+
+    public void clickOnCourseMenuItem() {
+        clickOn("Courses menu item", driver, coursesMenuItem);
+    }
+
+    public void clickOnFreeClassesDropdownMenuItem() {
+        clickOn("Free classes dropdown menu item", driver, freeClassesDropdownMenuItem);
     }
 }
