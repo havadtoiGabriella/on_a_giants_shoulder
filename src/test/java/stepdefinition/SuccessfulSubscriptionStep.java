@@ -1,6 +1,5 @@
 package stepdefinition;
 
-import com.giantshoulder.pageobject.SuccessfulSubscriptionPage;
 import cucumber.api.java.en.Then;
 
 public class SuccessfulSubscriptionStep extends BaseStepDefinition {
