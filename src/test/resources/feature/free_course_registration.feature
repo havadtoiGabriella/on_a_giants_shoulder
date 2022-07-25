@@ -7,7 +7,7 @@ Feature: Free course registration test
 
   Scenario: Register to 'Activate Your Motivation' course
     Given I choose 'Activate Your Motivation' course
-    When I enter my name and e-mail address and select "Watch yesterday's broadcast now"
+    When I enter my name and e-mail address and select 'Watch yesterday's broadcast now'
     Then I should see the course video
 
   Scenario: Register to 'Hacking Procrastination 4-Day Workshop' course
