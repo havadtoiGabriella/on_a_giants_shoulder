@@ -18,8 +18,9 @@ public class BackgroundStep extends BaseStepDefinition {
         homePage.acceptDataConsentPanel();
     }
 
-    @And("I click on the Subscribe button")
-    public void i_click_on_the_subscribe_button() {
-        homePage.clickOnSubscribeButton();
+    @And("I navigate to the free courses page")
+    public void i_navigate_to_the_free_courses_page() {
+        homePage.clickOnCourseMenuItem();
+        homePage.clickOnFreeClassesDropdownMenuItem();
     }
 }
