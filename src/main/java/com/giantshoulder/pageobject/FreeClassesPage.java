@@ -14,7 +14,21 @@ public class FreeClassesPage extends BasePage {
     @FindBy(linkText = "Jumpstart My Motivation")
     private WebElement jumpstartMyMotivationButton;
 
-    public void clickOnJumpstartMyMotivatonButton() {
+    @FindBy(linkText = "Eliminate Procrastination")
+    private WebElement eliminateProcratinationButton;
+
+    @FindBy(linkText = "Boost My Learning Power")
+    private WebElement boostMyLearningPowerButton;
+
+    public void clickOnJumpstartMyMotivationButton() {
         clickOn("Jumpstart My Motivation button", driver, jumpstartMyMotivationButton);
+    }
+
+    public void clickOnJEliminateProcrastinationButton() {
+        clickOn("Eliminate Procrastination button", driver, eliminateProcratinationButton);
+    }
+
+    public void clickOnBoostMyLearningPowerButton() {
+        clickOn("Boost My Learning Power button", driver, boostMyLearningPowerButton);
     }
 }

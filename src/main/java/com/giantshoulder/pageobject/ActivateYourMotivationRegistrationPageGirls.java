@@ -55,11 +55,11 @@ public class ActivateYourMotivationRegistrationPageGirls extends BasePage {
         selectByTextFrom("Date selector", selectDateDropdown, option);
     }
 
-    public void clickOnRegisterButton(){
+    public void clickOnRegisterButton() {
         clickOn("register button", driver, registerButton);
     }
 
-    public void clickOnRegisterButtonGuy(){
+    public void clickOnRegisterButtonGuy() {
         clickOn("register button", driver, registerButtonGuy);
     }
 }
