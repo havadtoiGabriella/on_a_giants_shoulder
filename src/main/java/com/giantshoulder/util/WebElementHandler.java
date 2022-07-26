@@ -36,7 +36,7 @@ public final class WebElementHandler {
     }
 
     public static void selectByTextFrom(String elementName, Select dropdown, String visibleText) {
-        LOGGER.info("Selecting from " + elementName + " by visible text: " + visibleText + ".");
+        LOGGER.info("Selecting from " + "'" + elementName + "'" + " by visible text: " + visibleText + ".");
         dropdown.selectByVisibleText(visibleText);
     }
 }
