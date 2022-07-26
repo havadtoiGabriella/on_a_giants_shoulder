@@ -7,14 +7,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class ActivateYourMotivationRegistrationPage extends BasePage {
+public class ActivateYourMotivationRegistrationPageGirls extends BasePage {
 
-    public ActivateYourMotivationRegistrationPage(ChromeDriver driver) {
+    public ActivateYourMotivationRegistrationPageGirls(ChromeDriver driver) {
         super(driver);
     }
 
     private final By dropdown = By.cssSelector(".selectAW-date-real.selectAW-date");
-    private final Select selectDateDropdown = new Select(driver.findElement(dropdown));
 
     @FindBy(name = "name")
     private WebElement nameInputField;
@@ -34,6 +33,8 @@ public class ActivateYourMotivationRegistrationPage extends BasePage {
     @FindBy(id = "tmp_button-34181")
     private WebElement registerButtonGuy;
 
+    private final Select selectDateDropdown = new Select(driver.findElement(dropdown));
+
     public void waitForRegistrationPanel() {
         waitForElementToBeVisible("registration panel", driver, registrationPanel);
     }
@@ -43,7 +44,7 @@ public class ActivateYourMotivationRegistrationPage extends BasePage {
     }
 
     public void fillNameFieldWith(String name) {
-        sendKeysTo("name field", nameInputField, name);
+        sendKeysTo("namefield", nameInputField, name);
     }
 
     public void fillEmailFieldWith(String email) {
@@ -51,14 +52,14 @@ public class ActivateYourMotivationRegistrationPage extends BasePage {
     }
 
     public void fromDropdownSelect(String option) {
-        selectByTextFrom("date selector", selectDateDropdown, option);
+        selectByTextFrom("Date selector", selectDateDropdown, option);
     }
 
-    public void clickOnRegisterButton() {
+    public void clickOnRegisterButton(){
         clickOn("register button", driver, registerButton);
     }
 
-    public void clickOnRegisterButtonGuy() {
+    public void clickOnRegisterButtonGuy(){
         clickOn("register button", driver, registerButtonGuy);
     }
 }
