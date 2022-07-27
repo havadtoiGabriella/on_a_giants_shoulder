@@ -9,8 +9,13 @@ import org.openqa.selenium.support.ui.Select;
 
 public class ActivateYourMotivationRegistrationThirtyMinutesCoursePage extends BasePage {
 
+    public ActivateYourMotivationRegistrationThirtyMinutesCoursePage(ChromeDriver driver) {
+        super(driver);
+    }
+
     private static final String urlFragmentForThirtyMinutesCourse = "aym-registration-v2";
     private final By dropdown = By.cssSelector(".selectAW-date-real.selectAW-date");
+
     private final Select selectDateDropdown = new Select(driver.findElement(dropdown));
 
     @FindBy(name = "name")
@@ -24,10 +29,6 @@ public class ActivateYourMotivationRegistrationThirtyMinutesCoursePage extends B
 
     @FindBy(id = "row--61067")
     private WebElement registrationPanelThirtyMinutes;
-
-    public ActivateYourMotivationRegistrationThirtyMinutesCoursePage(ChromeDriver driver) {
-        super(driver);
-    }
 
     public String getUrlFragmentForThirtyMinutesCourse() {
         return urlFragmentForThirtyMinutesCourse;

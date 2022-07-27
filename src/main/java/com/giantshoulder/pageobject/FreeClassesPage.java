@@ -24,7 +24,7 @@ public class FreeClassesPage extends BasePage {
         clickOn("Jumpstart My Motivation button", driver, jumpstartMyMotivationButton);
     }
 
-    public void clickOnJEliminateProcrastinationButton() {
+    public void clickOnEliminateProcrastinationButton() {
         clickOn("Eliminate Procrastination button", driver, eliminateProcrastinationButton);
     }
 

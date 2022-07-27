@@ -3,7 +3,7 @@ package stepdefinition;
 import com.giantshoulder.pageobject.CourseVideoPage;
 import cucumber.api.java.en.Then;
 
-public class VideoPageStep extends BaseStepDefinition {
+public class CourseVideoPageStep extends BaseStepDefinition {
 
     private final CourseVideoPage courseVideoPage = new CourseVideoPage(driver);
 

@@ -14,7 +14,7 @@ public class FreeClassesStep extends BaseStepDefinition {
 
     @Given("I choose 'Hacking Procrastination 4-Day Workshop' course")
     public void i_choose_hacking_procrastination_course() {
-        freeClassesPage.clickOnJEliminateProcrastinationButton();
+        freeClassesPage.clickOnEliminateProcrastinationButton();
     }
 
     @Given("I choose 'Spark Your Learning Genius' course")
