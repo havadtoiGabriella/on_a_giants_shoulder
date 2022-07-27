@@ -1,7 +1,6 @@
 package com.giantshoulder.pageobject;
 
 import static com.giantshoulder.util.WebElementHandler.*;
-import static com.giantshoulder.util.WebElementHandler.clickOn;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,7 +15,7 @@ public class ActivateYourMotivationRegistrationPageGuy extends BasePage {
 
     private final By dropdown = By.cssSelector(".selectAW-date-real.selectAW-date");
     private final Select selectDateDropdown = new Select(driver.findElement(dropdown));
-    
+
     @FindBy(name = "name")
     private WebElement nameInputField;
 
@@ -33,9 +32,8 @@ public class ActivateYourMotivationRegistrationPageGuy extends BasePage {
     private WebElement registerButtonGuy;
 
     public void waitForRegistrationPanel() {
-        waitForElementToBeVisible("registration panel", driver, registrationPanel);
-
-    private final Select selectDateDropdown = new Select(driver.findElement(dropdown));
+        waitForElementToBeVisible("registration panel", driver, registrationPanelGuy);
+    }
 
     public void waitForRegistrationPanelGuy() {
         waitForElementToBeVisible("registration panel", driver, registrationPanelGuy);
@@ -53,15 +51,11 @@ public class ActivateYourMotivationRegistrationPageGuy extends BasePage {
         selectByTextFrom("date selector", selectDateDropdown, option);
     }
 
-    public void clickOnRegisterButton() {
-        clickOn("register button", driver, registerButton);
-    }
-
     public void clickOnRegisterButtonGuy() {
         clickOn("register button", driver, registerButtonGuy);
     }
 
-    public void clickOnRegisterButton(){
+    public void clickOnRegisterButton() {
         clickOn("register button", driver, registerButton);
     }
 }
