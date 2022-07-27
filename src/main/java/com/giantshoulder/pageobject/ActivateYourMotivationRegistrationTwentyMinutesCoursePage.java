@@ -13,6 +13,7 @@ public class ActivateYourMotivationRegistrationTwentyMinutesCoursePage extends B
         super(driver);
     }
 
+    private static final String urlFragmentForTwentyMinutesCourse = "aym-registration-9?";
     private final By dropdown = By.cssSelector(".selectAW-date-real.selectAW-date");
     private final Select selectDateDropdown = new Select(driver.findElement(dropdown));
 
@@ -27,6 +28,10 @@ public class ActivateYourMotivationRegistrationTwentyMinutesCoursePage extends B
 
     @FindBy(id = "tmp_button-34181")
     private WebElement registerButtonTwentyMinutes;
+
+    public String getUrlForTwentyMinutesCourse() {
+        return urlFragmentForTwentyMinutesCourse;
+    }
 
     public void waitForRegistrationPanelTwentyMinutes() {
         waitForElementToBeVisible("registration panel", driver, registrationPanelTwentyMinutes);
