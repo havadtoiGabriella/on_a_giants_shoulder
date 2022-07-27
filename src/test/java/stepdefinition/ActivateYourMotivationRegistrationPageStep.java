@@ -6,21 +6,21 @@ import cucumber.api.java.en.When;
 public class ActivateYourMotivationRegistrationPageStep extends BaseStepDefinition {
 
     private final ActivateYourMotivationRegistrationPage activeMotivationPage = new ActivateYourMotivationRegistrationPage(driver);
-    private static final String urlFragmentGuy = "aym-registration-9?";
+    private static final String urlFragmentForTwentyMinutesCourse = "aym-registration-9?";
 
     @When("I enter my name and e-mail address and select 'Watch yesterday's broadcast now'")
     public void i_enter_my_name_and_email_address_and_select_watch_yesterdays_broadcast_now() {
         String url = driver.getCurrentUrl();
-        if (url.contains(urlFragmentGuy)) {
-            activeMotivationPage.waitForRegistrationPanelGuy();
+        if (url.contains(urlFragmentForTwentyMinutesCourse)) {
+            activeMotivationPage.waitForRegistrationPanelTwentyMinutes();
         } else {
             activeMotivationPage.waitForRegistrationPanel();
         }
         activeMotivationPage.fillNameFieldWith("My Name");
         activeMotivationPage.fillEmailFieldWith("onagiantsshoulder@gmail.com");
         activeMotivationPage.fromDropdownSelect("Watch Yesterday's Broadcast Now");
-        if (url.contains(urlFragmentGuy)) {
-            activeMotivationPage.clickOnRegisterButtonGuy();
+        if (url.contains(urlFragmentForTwentyMinutesCourse)) {
+            activeMotivationPage.clickOnRegisterButtonTwentyMinutes();
         } else {
             activeMotivationPage.clickOnRegisterButton();
         }

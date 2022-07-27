@@ -7,9 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class ActivateYourMotivationRegistrationPageGirls extends BasePage {
+public class ActivateYourMotivationRegistrationPage extends BasePage {
 
-    public ActivateYourMotivationRegistrationPageGirls(ChromeDriver driver) {
+    public ActivateYourMotivationRegistrationPage(ChromeDriver driver) {
         super(driver);
     }
 
@@ -28,10 +28,10 @@ public class ActivateYourMotivationRegistrationPageGirls extends BasePage {
     private WebElement registrationPanel;
 
     @FindBy(id = "col-right-313")
-    private WebElement registrationPanelGuy;
+    private WebElement registrationPanelTwentyMinutes;
 
     @FindBy(id = "tmp_button-34181")
-    private WebElement registerButtonGuy;
+    private WebElement registerButtonTwentyMinutes;
 
     private final Select selectDateDropdown = new Select(driver.findElement(dropdown));
 
@@ -39,8 +39,8 @@ public class ActivateYourMotivationRegistrationPageGirls extends BasePage {
         waitForElementToBeVisible("registration panel", driver, registrationPanel);
     }
 
-    public void waitForRegistrationPanelGuy() {
-        waitForElementToBeVisible("registration panel", driver, registrationPanelGuy);
+    public void waitForRegistrationPanelTwentyMinutes() {
+        waitForElementToBeVisible("registration panel", driver, registrationPanelTwentyMinutes);
     }
 
     public void fillNameFieldWith(String name) {
@@ -59,7 +59,7 @@ public class ActivateYourMotivationRegistrationPageGirls extends BasePage {
         clickOn("register button", driver, registerButton);
     }
 
-    public void clickOnRegisterButtonGuy(){
-        clickOn("register button", driver, registerButtonGuy);
+    public void clickOnRegisterButtonTwentyMinutes(){
+        clickOn("register button", driver, registerButtonTwentyMinutes);
     }
 }

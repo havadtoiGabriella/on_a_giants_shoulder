@@ -7,9 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class ActivateYourMotivationRegistrationPageGuy extends BasePage {
+public class ActivateYourMotivationRegistrationTwentyMinutesCoursePage extends BasePage {
 
-    public ActivateYourMotivationRegistrationPageGuy(ChromeDriver driver) {
+    public ActivateYourMotivationRegistrationTwentyMinutesCoursePage(ChromeDriver driver) {
         super(driver);
     }
 
