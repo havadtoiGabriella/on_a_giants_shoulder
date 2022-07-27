@@ -7,9 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class ActivateYourMotivationRegistrationPage extends BasePage {
+public class ActivateYourMotivationRegistrationThirtyMinutesCoursePage extends BasePage {
 
-    public ActivateYourMotivationRegistrationPage(ChromeDriver driver) {
+    public ActivateYourMotivationRegistrationThirtyMinutesCoursePage(ChromeDriver driver) {
         super(driver);
     }
 
@@ -22,29 +22,19 @@ public class ActivateYourMotivationRegistrationPage extends BasePage {
     private WebElement emailInputField;
 
     @FindBy(id = "button-79065")
-    private WebElement registerButton;
+    private WebElement registerButtonThirtyMinutes;
 
     @FindBy(id = "row--61067")
-    private WebElement registrationPanel;
-
-    @FindBy(id = "col-right-313")
-    private WebElement registrationPanelTwentyMinutes;
-
-    @FindBy(id = "tmp_button-34181")
-    private WebElement registerButtonTwentyMinutes;
+    private WebElement registrationPanelThirtyMinutes;
 
     private final Select selectDateDropdown = new Select(driver.findElement(dropdown));
 
-    public void waitForRegistrationPanel() {
-        waitForElementToBeVisible("registration panel", driver, registrationPanel);
-    }
-
-    public void waitForRegistrationPanelTwentyMinutes() {
-        waitForElementToBeVisible("registration panel", driver, registrationPanelTwentyMinutes);
+    public void waitForRegistrationPanelThirtyMinutes() {
+        waitForElementToBeVisible("registration panel", driver, registrationPanelThirtyMinutes);
     }
 
     public void fillNameFieldWith(String name) {
-        sendKeysTo("namefield", nameInputField, name);
+        sendKeysTo("name field", nameInputField, name);
     }
 
     public void fillEmailFieldWith(String email) {
@@ -55,11 +45,7 @@ public class ActivateYourMotivationRegistrationPage extends BasePage {
         selectByTextFrom("Date selector", selectDateDropdown, option);
     }
 
-    public void clickOnRegisterButton(){
-        clickOn("register button", driver, registerButton);
-    }
-
-    public void clickOnRegisterButtonTwentyMinutes(){
-        clickOn("register button", driver, registerButtonTwentyMinutes);
+    public void clickOnRegisterButtonThirtyMinutes() {
+        clickOn("register button", driver, registerButtonThirtyMinutes);
     }
 }

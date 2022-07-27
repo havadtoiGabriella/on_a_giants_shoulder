@@ -22,21 +22,14 @@ public class ActivateYourMotivationRegistrationTwentyMinutesCoursePage extends B
     @FindBy(name = "email")
     private WebElement emailInputField;
 
-    @FindBy(id = "tmp_button-34181")
-    private WebElement registerButton;
-
     @FindBy(id = "col-right-313")
-    private WebElement registrationPanelGuy;
+    private WebElement registrationPanelTwentyMinutes;
 
     @FindBy(id = "tmp_button-34181")
-    private WebElement registerButtonGuy;
+    private WebElement registerButtonTwentyMinutes;
 
-    public void waitForRegistrationPanel() {
-        waitForElementToBeVisible("registration panel", driver, registrationPanelGuy);
-    }
-
-    public void waitForRegistrationPanelGuy() {
-        waitForElementToBeVisible("registration panel", driver, registrationPanelGuy);
+    public void waitForRegistrationPanelTwentyMinutes() {
+        waitForElementToBeVisible("registration panel", driver, registrationPanelTwentyMinutes);
     }
 
     public void fillNameFieldWith(String name) {
@@ -51,11 +44,7 @@ public class ActivateYourMotivationRegistrationTwentyMinutesCoursePage extends B
         selectByTextFrom("date selector", selectDateDropdown, option);
     }
 
-    public void clickOnRegisterButtonGuy() {
-        clickOn("register button", driver, registerButtonGuy);
-    }
-
-    public void clickOnRegisterButton() {
-        clickOn("register button", driver, registerButton);
+    public void clickOnRegisterButtonTwentyMinutes() {
+        clickOn("register button", driver, registerButtonTwentyMinutes);
     }
 }
