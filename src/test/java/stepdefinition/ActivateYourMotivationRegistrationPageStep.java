@@ -6,12 +6,12 @@ import cucumber.api.java.en.When;
 
 public class ActivateYourMotivationRegistrationPageStep extends BaseStepDefinition {
 
+    private final String url = driver.getCurrentUrl();
     private final ActivateYourMotivationRegistrationThirtyMinutesCoursePage activeForThirty = new ActivateYourMotivationRegistrationThirtyMinutesCoursePage(driver);
     private final ActivateYourMotivationRegistrationTwentyMinutesCoursePage activeForTwenty = new ActivateYourMotivationRegistrationTwentyMinutesCoursePage(driver);
 
     @When("I enter my name and e-mail address and select 'Watch yesterday's broadcast now'")
     public void i_enter_my_name_and_email_address_and_select_watch_yesterdays_broadcast_now() {
-        String url = driver.getCurrentUrl();
         if (url.contains(activeForTwenty.getUrlForTwentyMinutesCourse())) {
             activeForTwenty.waitForRegistrationPanelTwentyMinutes();
             activeForTwenty.fillNameFieldWith("My Name");
