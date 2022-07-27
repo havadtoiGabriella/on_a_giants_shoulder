@@ -1,14 +1,13 @@
 package com.giantshoulder.pageobject;
 
 import static com.giantshoulder.util.WebElementHandler.*;
-import static com.giantshoulder.util.WebElementHandler.clickOn;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class ActivateYourMotivationRegistrationPageGuy extends BasePage{
+public class ActivateYourMotivationRegistrationPageGuy extends BasePage {
 
     public ActivateYourMotivationRegistrationPageGuy(ChromeDriver driver) {
         super(driver);
@@ -35,7 +34,7 @@ public class ActivateYourMotivationRegistrationPageGuy extends BasePage{
     }
 
     public void fillNameFieldWith(String name) {
-        sendKeysTo("namefield", nameInputField, name);
+        sendKeysTo("name field", nameInputField, name);
     }
 
     public void fillEmailFieldWith(String email) {
@@ -43,10 +42,10 @@ public class ActivateYourMotivationRegistrationPageGuy extends BasePage{
     }
 
     public void fromDropdownSelect(String option) {
-        selectByTextFrom("Date selector", selectDateDropdown, option);
+        selectByTextFrom("date selector", selectDateDropdown, option);
     }
 
-    public void clickOnRegisterButton(){
+    public void clickOnRegisterButton() {
         clickOn("register button", driver, registerButton);
     }
 }

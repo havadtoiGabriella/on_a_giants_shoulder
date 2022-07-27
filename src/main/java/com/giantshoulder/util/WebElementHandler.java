@@ -31,7 +31,7 @@ public final class WebElementHandler {
     }
 
     public static void sendKeysTo(String elementName, WebElement inputField, String text) {
-        LOGGER.info("Sending text " + "'" + text + "'" + "to " + elementName + ".");
+        LOGGER.info("Sending text " + "'" + text + "'" + " to " + elementName + ".");
         inputField.sendKeys(text);
     }
 

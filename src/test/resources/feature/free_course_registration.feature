@@ -17,7 +17,5 @@ Feature: Free course registration test
 
   Scenario: Register to 'Spark Your Learning Genius' course
     Given I choose 'Spark Your Learning Genius' course
-    When I enter my name and e-mail address and select "Watch yesterday's broadcast now"
+    When I enter my name and my e-mail address and select 'Watch yesterday's broadcast now'
     Then I should see the course video
-
-
