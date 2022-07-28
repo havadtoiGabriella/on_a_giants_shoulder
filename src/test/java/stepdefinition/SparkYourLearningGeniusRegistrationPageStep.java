@@ -1,18 +1,15 @@
 package stepdefinition;
 
-import com.giantshoulder.pageobject.SparkYourLearningGeniusCourseRegistrationPage;
+import com.giantshoulder.pageobject.SparkYourMotivationCourseRegistrationPage;
 import cucumber.api.java.en.When;
 
 public class SparkYourLearningGeniusRegistrationPageStep extends BaseStepDefinition {
 
-    private final SparkYourLearningGeniusCourseRegistrationPage sparkYourLearningGeniusCourseRegistrationPage = new SparkYourLearningGeniusCourseRegistrationPage(driver);
+    private final SparkYourMotivationCourseRegistrationPage sparkYourMotivationCourseRegistrationPage
+            = new SparkYourMotivationCourseRegistrationPage(driver);
 
-    @When("I enter my name and my e-mail address and select 'Watch yesterday's broadcast now'")
-    public void i_enter_my_name_and_my_email_address_and_select_watch_yesterdays_broadcast_now() {
-        sparkYourLearningGeniusCourseRegistrationPage.waitForRegistrationPanel();
-        sparkYourLearningGeniusCourseRegistrationPage.fillNameFieldWith("My Name");
-        sparkYourLearningGeniusCourseRegistrationPage.fillEmailFieldWith("onagiantsshoulder@gmail.com");
-        sparkYourLearningGeniusCourseRegistrationPage.fromDropdownSelect("Watch Yesterday's Broadcast Now");
-        sparkYourLearningGeniusCourseRegistrationPage.clickOnRegisterButton();
+    @When("I register for the '3 Steps To Spark Your Motivation And Take Action... ' course")
+    public void i_register_for_the_3_steps_to_spark_your_motivation_course() {
+        sparkYourMotivationCourseRegistrationPage.registerUser("My Name", "onagiantsshoulder@gmail.com", "Watch Yesterday's Broadcast Now");
     }
 }

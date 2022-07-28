@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.Select;
 
 public class ActivateYourMotivationCourseRegistrationPage extends BasePage {
     private static final Logger LOGGER = new Logger(WebElementAssertions.class);
-    private static final String urlFragmentForThirtyMinutesCourse = "aym-registration-v2";
     private final By dropdown = By.cssSelector(".selectAW-date-real.selectAW-date");
     private final Select selectDateDropdown = new Select(driver.findElement(dropdown));
 
@@ -22,38 +21,38 @@ public class ActivateYourMotivationCourseRegistrationPage extends BasePage {
     private WebElement emailInputField;
 
     @FindBy(id = "button-79065")
-    private WebElement registerButtonThirtyMinutes;
+    private WebElement registerButton;
 
     @FindBy(id = "row--61067")
-    private WebElement registrationPanelThirtyMinutes;
+    private WebElement registrationPanel;
 
-    public String getUrlFragmentForThirtyMinutesCourse() {
-        return urlFragmentForThirtyMinutesCourse;
-    }
-
-    public void waitForRegistrationPanelThirtyMinutes() {
+    public void registerUser(String name, String email, String option){
         LOGGER.info("Waiting for registration panel to be visible.");
-        waitForElementToBeVisible(registrationPanelThirtyMinutes, driver);
+        waitForElementToBeVisible(registrationPanel, driver);
+        LOGGER.info("Filling name field with " + name);
+        sendKeysTo(nameInputField, name);
+        LOGGER.info("Filling email field with " + email);
+        sendKeysTo(emailInputField, email);
+        LOGGER.info("Selecting from dropdown by visible name: " + option);
+        selectByTextFrom(selectDateDropdown, option);
+        LOGGER.info("Clicking on the registration button");
+        clickOn(registerButton, driver);
     }
 
-    public void fillNameFieldWith(String name) {
-        LOGGER.info("Filling name field with " + name);
+    private void fillNameFieldWith(String name) {
         sendKeysTo(nameInputField, name);
     }
 
-    public void fillEmailFieldWith(String email) {
-        LOGGER.info("Filling email field with " + email);
+    private void fillEmailFieldWith(String email) {
         sendKeysTo(emailInputField, email);
     }
 
-    public void fromDropdownSelect(String option) {
-        LOGGER.info("Selecting from dropdown by visible name: " + option);
+    private void fromDropdownSelect(String option) {
         selectByTextFrom(selectDateDropdown, option);
     }
 
-    public void clickOnRegisterButtonThirtyMinutes() {
-        LOGGER.info("Clicking on the registration button");
-        clickOn(registerButtonThirtyMinutes, driver);
+    private void clickOnRegisterButtonThirtyMinutes() {
+        clickOn(registerButton, driver);
     }
 
     public ActivateYourMotivationCourseRegistrationPage(ChromeDriver driver) {
