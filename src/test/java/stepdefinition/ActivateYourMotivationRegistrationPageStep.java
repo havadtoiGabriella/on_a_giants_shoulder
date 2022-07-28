@@ -1,14 +1,13 @@
 package stepdefinition;
 
-import com.giantshoulder.pageobject.ActivateYourMotivationRegistrationThirtyMinutesCoursePage;
-import com.giantshoulder.pageobject.ActivateYourMotivationRegistrationTwentyMinutesCoursePage;
+import com.giantshoulder.pageobject.ActivateYourMotivationCourseRegistrationPage;
+import com.giantshoulder.pageobject.SparkYourMotivationCourseRegistrationPage;
 import cucumber.api.java.en.When;
 
 public class ActivateYourMotivationRegistrationPageStep extends BaseStepDefinition {
-
     private final String url = driver.getCurrentUrl();
-    private final ActivateYourMotivationRegistrationThirtyMinutesCoursePage activeForThirty = new ActivateYourMotivationRegistrationThirtyMinutesCoursePage(driver);
-    private final ActivateYourMotivationRegistrationTwentyMinutesCoursePage activeForTwenty = new ActivateYourMotivationRegistrationTwentyMinutesCoursePage(driver);
+    private final ActivateYourMotivationCourseRegistrationPage activeForThirty = new ActivateYourMotivationCourseRegistrationPage(driver);
+    private final SparkYourMotivationCourseRegistrationPage activeForTwenty = new SparkYourMotivationCourseRegistrationPage(driver);
 
     @When("I enter my name and e-mail address and select 'Watch yesterday's broadcast now'")
     public void i_enter_my_name_and_email_address_and_select_watch_yesterdays_broadcast_now() {

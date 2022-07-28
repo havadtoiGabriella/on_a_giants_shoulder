@@ -11,7 +11,7 @@ public final class WebElementAssertions {
     }
 
     public static void elementIsDisplayed(WebElement element, String elementName) {
-        LOGGER.info("Validating if the " + "'" + elementName + "'" + " is displayed.");
+        LOGGER.debug("Validating if the element is displayed.");
         assertThat(element.isDisplayed()).isTrue();
     }
 }

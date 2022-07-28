@@ -1,15 +1,14 @@
 package com.giantshoulder.pageobject;
 
 import static com.giantshoulder.util.WebElementHandler.clickOn;
+import com.giantshoulder.logger.Logger;
+import com.giantshoulder.util.WebElementAssertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class FreeClassesPage extends BasePage {
-
-    public FreeClassesPage(ChromeDriver driver) {
-        super(driver);
-    }
+    private static final Logger LOGGER = new Logger(WebElementAssertions.class);
 
     @FindBy(linkText = "Jumpstart My Motivation")
     private WebElement jumpstartMyMotivationButton;
@@ -21,14 +20,21 @@ public class FreeClassesPage extends BasePage {
     private WebElement boostMyLearningPowerButton;
 
     public void clickOnJumpstartMyMotivationButton() {
-        clickOn("Jumpstart My Motivation button", driver, jumpstartMyMotivationButton);
+        LOGGER.info("Clicking on 'Jumpstart My Motivation' button.");
+        clickOn(jumpstartMyMotivationButton, driver);
     }
 
     public void clickOnEliminateProcrastinationButton() {
-        clickOn("Eliminate Procrastination button", driver, eliminateProcrastinationButton);
+        LOGGER.info("Clicking on 'Eliminate Procrastination' button.");
+        clickOn(eliminateProcrastinationButton, driver);
     }
 
     public void clickOnBoostMyLearningPowerButton() {
-        clickOn("Boost My Learning Power button", driver, boostMyLearningPowerButton);
+        LOGGER.info("Clicking on 'Boost My Learning Power' button.");
+        clickOn(boostMyLearningPowerButton, driver);
+    }
+
+    public FreeClassesPage(ChromeDriver driver) {
+        super(driver);
     }
 }

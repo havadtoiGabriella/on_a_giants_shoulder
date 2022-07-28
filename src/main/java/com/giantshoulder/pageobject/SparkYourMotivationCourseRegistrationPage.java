@@ -1,18 +1,16 @@
 package com.giantshoulder.pageobject;
 
 import static com.giantshoulder.util.WebElementHandler.*;
+import com.giantshoulder.logger.Logger;
+import com.giantshoulder.util.WebElementAssertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class ActivateYourMotivationRegistrationTwentyMinutesCoursePage extends BasePage {
-
-    public ActivateYourMotivationRegistrationTwentyMinutesCoursePage(ChromeDriver driver) {
-        super(driver);
-    }
-
+public class SparkYourMotivationCourseRegistrationPage extends BasePage {
+    private static final Logger LOGGER = new Logger(WebElementAssertions.class);
     private static final String urlFragmentForTwentyMinutesCourse = "aym-registration-9?";
     private final By dropdown = By.cssSelector(".selectAW-date-real.selectAW-date");
     private final Select selectDateDropdown = new Select(driver.findElement(dropdown));
@@ -34,22 +32,31 @@ public class ActivateYourMotivationRegistrationTwentyMinutesCoursePage extends B
     }
 
     public void waitForRegistrationPanelTwentyMinutes() {
-        waitForElementToBeVisible("registration panel", driver, registrationPanelTwentyMinutes);
+        LOGGER.info("Waiting for registration panel to be visible.");
+        waitForElementToBeVisible(registrationPanelTwentyMinutes,  driver);
     }
 
     public void fillNameFieldWith(String name) {
-        sendKeysTo("name field", nameInputField, name);
+        LOGGER.info("Filling name field with " + name);
+        sendKeysTo(nameInputField, name);
     }
 
     public void fillEmailFieldWith(String email) {
-        sendKeysTo("email field", emailInputField, email);
+        LOGGER.info("Filling email field with " + email);
+        sendKeysTo(emailInputField, email);
     }
 
     public void fromDropdownSelect(String option) {
-        selectByTextFrom("date selector", selectDateDropdown, option);
+        LOGGER.info("Selecting from dropdown by visible name: " + option);
+        selectByTextFrom(selectDateDropdown, option);
     }
 
     public void clickOnRegisterButtonTwentyMinutes() {
-        clickOn("register button", driver, registerButtonTwentyMinutes);
+        LOGGER.info("Clicking on the registration button");
+        clickOn(registerButtonTwentyMinutes, driver);
+    }
+
+    public SparkYourMotivationCourseRegistrationPage(ChromeDriver driver) {
+        super(driver);
     }
 }
