@@ -15,4 +15,9 @@ public class Logger {
         Reporter.log(message + "\n");
         logger.info(message);
     }
+
+    public void debug(final String message) {
+        Reporter.log(message + "\n");
+        logger.debug(message);
+    }
 }

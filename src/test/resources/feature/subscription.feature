@@ -4,15 +4,15 @@ Feature: Blog articles test
     Given I navigate to the main page
     And I accept the data handling dialog box
 
-  Scenario Outline: Opening a blog article
-    Given I open the <page> blog page
-    When I choose the <article> article
-    Then I should be redirected to the <article> article's landing page
+  Scenario Outline: Opening "<article>" article
+    Given I navigate to the <page> blog page
+    When I choose the "<article>" article
+    Then I should be redirected to the "<article>" article's landing page
     Examples:
-      | page             | article                                                      |
-      | Focus            | The Flowtime Technique: A Pomodoro Alternative               |
-      | Leadership       | How to Deal With Coworkers Who Complain A Lot                |
-      | Diet & Nutrition | How to Create a Delicious and Healthy Meal Plan for the Week |
+      | page               | article                                                      |
+      | FOCUS              | The Flowtime Technique: A Pomodoro Alternative               |
+      | LEADERSHIP         | How to Deal With Coworkers Who Complain A Lot                |
+      | DIET_AND_NUTRITION | How to Create a Delicious and Healthy Meal Plan for the Week |
 
   Scenario Outline: Opening a blog article with pagination
     Given I open the <page> blog page
@@ -27,14 +27,14 @@ Feature: Blog articles test
 
   Scenario Outline: Opening a blog article writer's profile page
     Given I open the <page> blog page
-    And I choose the <article> article
-    When I click on <writer> writer's name
-    Then I should be redirected to <writer> writer's profile page
+    And I choose the "<article>" article
+    When I click on "<writer>" writer's name
+    Then I should be redirected to "<writer>" writer's profile page
     Examples:
-      | page             | article                                                      | writer            |
-      | Focus            | The Flowtime Technique: A Pomodoro Alternative               | Chris Porteous    |
-      | Leadership       | How to Deal With Coworkers Who Complain A Lot                | Yair Nativ        |
-      | Diet & Nutrition | How to Create a Delicious and Healthy Meal Plan for the Week | Dr. Harriet Holme |
+      | page               | article                                                      | writer            |
+      | FOCUS              | The Flowtime Technique: A Pomodoro Alternative               | Chris Porteous    |
+      | LEADERSHIP         | How to Deal With Coworkers Who Complain A Lot                | Yair Nativ        |
+      | DIET_AND_NUTRITION | How to Create a Delicious and Healthy Meal Plan for the Week | Dr. Harriet Holme |
 
   Scenario Outline: Opening 'Posts' on blog article writer's profile page
     Given I open the <page> blog page

@@ -16,21 +16,21 @@ public final class WebElementHandler {
     private WebElementHandler() {
     }
 
-    public static void waitForElementToBeVisible(String elementName, ChromeDriver driver, WebElement element) {
-        LOGGER.info("Waiting for '" + elementName + "' to be visible.");
+    public static void waitForElementToBeVisible(WebElement element, ChromeDriver driver) {
+        LOGGER.info("Waiting for element to be visible.");
         WebDriverWait wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
         wait.withTimeout(ofSeconds(WAIT_TIMEOUT)).until(visibilityOf(element));
     }
 
-    public static void clickOn(String elementName, ChromeDriver driver, WebElement element) {
-        LOGGER.info("Clicking on '" + elementName + "'.");
+    public static void clickOn(WebElement element, ChromeDriver driver) {
+        LOGGER.info("Clicking on element.");
         WebDriverWait wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
         wait.withTimeout(ofSeconds(WAIT_TIMEOUT)).until(elementToBeClickable(element));
         element.click();
     }
 
-    public static void sendKeysTo(String elementName, WebElement inputField, String text) {
-        LOGGER.info("Sending text " + "'" + text + "'" + "to " + elementName + ".");
+    public static void sendKeysTo(WebElement inputField, String text) {
+        LOGGER.info("Sending text to element");
         inputField.sendKeys(text);
     }
 }
