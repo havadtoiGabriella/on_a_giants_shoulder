@@ -32,10 +32,6 @@ public class HackingProcrastinationCourseRegistrationPage extends BasePage {
         fillEmailFieldWith(email);
         LOGGER.info("Clicking on the registration button");
         clickOnRegisterButton();
-        LOGGER.info("Waiting for registration panel to be visible.");
-        waitForElementToBeVisible(registrationPanel, driver);
-        LOGGER.info("Clicking on the registration button");
-        clickOn(registerButton, driver);
     }
 
     private void waitForRegistrationPanel() {
@@ -43,17 +39,14 @@ public class HackingProcrastinationCourseRegistrationPage extends BasePage {
     }
 
     private void fillNameFieldWith(String name) {
-        LOGGER.info("Filling name field with " + name);
         sendKeysTo(nameInputField, name);
     }
 
     private void fillEmailFieldWith(String email) {
-        LOGGER.info("Filling email field with " + email);
         sendKeysTo(emailInputField, email);
     }
 
     private void clickOnRegisterButton() {
-        LOGGER.info("Clicking on the registration button");
         clickOn(registerButton, driver);
     }
 

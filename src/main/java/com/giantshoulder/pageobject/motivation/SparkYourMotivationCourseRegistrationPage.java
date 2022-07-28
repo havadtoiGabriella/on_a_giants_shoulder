@@ -24,7 +24,7 @@ public class SparkYourMotivationCourseRegistrationPage extends BasePage {
     @FindBy(id = "col-right-313")
     private WebElement registrationPanel;
 
-    @FindBy(id = "tmp_button-34181")
+    @FindBy(id = "button-79065")
     private WebElement registerButton;
 
     public void registerUser(String name, String email, String option) {
