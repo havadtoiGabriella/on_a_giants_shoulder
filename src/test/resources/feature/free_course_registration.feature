@@ -8,12 +8,12 @@ Feature: Free course registration test
   Scenario: Register to 'Activate Your Motivation' course
     Given I choose 'Activate Your Motivation' course
     When I register for the 'Activate Your Motivation' course
-    Then I should see the course video
+    Then I should see the 'Activate Your Motivation' course video
 
   Scenario: Register to 'Activate Your Motivation' course
     Given I choose 'Activate Your Motivation' course
     When I register for the '3 Steps To Spark Your Motivation And Take Action... ' course
-    Then I should see the course video
+    Then I should see the 'Activate Your Motivation' course video
 
   Scenario: Register to 'Hacking Procrastination 4-Day Workshop' course
     Given I choose 'Hacking Procrastination 4-Day Workshop' course
