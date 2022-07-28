@@ -1,38 +1,50 @@
-Feature: Subscription test
+Feature: Blog articles test
 
-  Background: User opens the subscribe panel
+  Background: User accepts the data handling dialog box
     Given I navigate to the main page
     And I accept the data handling dialog box
-    And I click on the Subscribe button
 
-  Scenario Outline: Subscribe to 'Learn faster' newsletter
-    Given I choose 'Learn faster' newsletter
-    When I enter my e-mail address for 'Learn faster'
-    Then I should get a successful subscription "<message>" for learn faster
+  Scenario Outline: Opening blog articles
+    Given I open the <page> blog page
+    When I choose the <article> article
+    Then I should be redirected to the <article> article's landing page
     Examples:
-      | message                                                                          |
-      | Your email is confirmed and the FREE download will arrive in your inbox shortly. |
+      | page             | article                                                      |
+      | Focus            | The Flowtime Technique: A Pomodoro Alternative               |
+      | Leadership       | How to Deal With Coworkers Who Complain A Lot                |
+      | Diet & Nutrition | How to Create a Delicious and Healthy Meal Plan for the Week |
 
-  Scenario Outline: Subscribe to 'Stop procrastinating' newsletter
-    Given I choose 'Stop procrastinating' newsletter
-    When I enter my e-mail address for 'Stop procrastinating'
-    Then I should get a successful subscription "<message>" for stop procrastinating
+  Scenario Outline: Opening blog article with pagination
+    Given I open the <page> blog page
+    And I click on the 'See older posts' link
+    When I choose the <article> article
+    Then I should be redirected to the <article> article's landing page
     Examples:
-      | message                                                                          |
-      | Your email is confirmed and the FREE download will arrive in your inbox shortly. |
+      | page            | article                                                   |
+      | Life Balance    | 10 Simple Ways to Find Balance and Get Your Life Back     |
+      | Goal Getting    | How To Start Small And Make Your Goals Happen             |
+      | Success Mindset | How to Work Hard the Smart Way: 4 Daily Rituals to Follow |
 
-  Scenario Outline: Subscribe to 'Reach your goals' newsletter
-    Given I choose 'Reach your goals' newsletter
-    When I enter my e-mail address for 'Reach your goals'
-    Then I should get a successful subscription "<message>" for reach your goals
+  Scenario Outline: Opening blog article writer's page
+    Given I open the <page> blog page
+    And I choose the <article> article
+    When I click on <writer> writer's name
+    Then I should be redirected to <writer> writer's profile page
     Examples:
-      | message                 |
-      | Thanks for Subscribing! |
+      | page             | article                                                      | writer            |
+      | Focus            | The Flowtime Technique: A Pomodoro Alternative               | Chris Porteous    |
+      | Leadership       | How to Deal With Coworkers Who Complain A Lot                | Yair Nativ        |
+      | Diet & Nutrition | How to Create a Delicious and Healthy Meal Plan for the Week | Dr. Harriet Holme |
 
-  Scenario Outline: Subscribe to 'Improve focus' newsletter
-    Given I choose 'Improve focus' newsletter
-    When I enter my e-mail address for 'Improve focus'
-    Then I should get a successful subscription "<message>" for improve focus
+  Scenario Outline: Opening post on blog article writer's page
+    Given I open the <page> blog page
+    And I choose the <article> article
+    When I click on <writer> writer's name
+    And I click on 'Posts'
+    Then I should see all the posts that <writer> wrote
     Examples:
-      | message                 |
-      | Thanks for Subscribing! |
+      | page             | article                                                      | writer            |
+      | Focus            | The Flowtime Technique: A Pomodoro Alternative               | Chris Porteous    |
+      | Leadership       | How to Deal With Coworkers Who Complain A Lot                | Yair Nativ        |
+      | Diet & Nutrition | How to Create a Delicious and Healthy Meal Plan for the Week | Dr. Harriet Holme |
+

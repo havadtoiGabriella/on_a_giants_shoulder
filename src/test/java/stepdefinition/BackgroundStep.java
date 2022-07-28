@@ -17,9 +17,4 @@ public class BackgroundStep extends BaseStepDefinition {
     public void i_accept_the_data_handling_dialog_box() {
         homePage.acceptDataConsentPanel();
     }
-
-    @And("I click on the Subscribe button")
-    public void i_click_on_the_subscribe_button() {
-        homePage.clickOnSubscribeButton();
-    }
 }
