@@ -4,7 +4,7 @@ Feature: Blog articles test
     Given I navigate to the main page
     And I accept the data handling dialog box
 
-  Scenario Outline: Opening blog articles
+  Scenario Outline: Opening a blog article
     Given I open the <page> blog page
     When I choose the <article> article
     Then I should be redirected to the <article> article's landing page
@@ -14,10 +14,10 @@ Feature: Blog articles test
       | Leadership       | How to Deal With Coworkers Who Complain A Lot                |
       | Diet & Nutrition | How to Create a Delicious and Healthy Meal Plan for the Week |
 
-  Scenario Outline: Opening blog article with pagination
+  Scenario Outline: Opening a blog article with pagination
     Given I open the <page> blog page
-    And I click on the 'See older posts' link
-    When I choose the <article> article
+    When I click on the 'See older posts' link
+    And I choose the <article> article
     Then I should be redirected to the <article> article's landing page
     Examples:
       | page            | article                                                   |
@@ -25,7 +25,7 @@ Feature: Blog articles test
       | Goal Getting    | How To Start Small And Make Your Goals Happen             |
       | Success Mindset | How to Work Hard the Smart Way: 4 Daily Rituals to Follow |
 
-  Scenario Outline: Opening blog article writer's page
+  Scenario Outline: Opening a blog article writer's profile page
     Given I open the <page> blog page
     And I choose the <article> article
     When I click on <writer> writer's name
@@ -36,15 +36,26 @@ Feature: Blog articles test
       | Leadership       | How to Deal With Coworkers Who Complain A Lot                | Yair Nativ        |
       | Diet & Nutrition | How to Create a Delicious and Healthy Meal Plan for the Week | Dr. Harriet Holme |
 
-  Scenario Outline: Opening post on blog article writer's page
+  Scenario Outline: Opening 'Posts' on blog article writer's profile page
     Given I open the <page> blog page
     And I choose the <article> article
-    When I click on <writer> writer's name
-    And I click on 'Posts'
+    And I click on <writer> writer's name
+    When I click on 'Posts'
     Then I should see all the posts that <writer> wrote
     Examples:
       | page             | article                                                      | writer            |
       | Focus            | The Flowtime Technique: A Pomodoro Alternative               | Chris Porteous    |
       | Leadership       | How to Deal With Coworkers Who Complain A Lot                | Yair Nativ        |
       | Diet & Nutrition | How to Create a Delicious and Healthy Meal Plan for the Week | Dr. Harriet Holme |
+
+  Scenario Outline: Opening a blog article's Reference page
+    Given I open the <page> blog page
+    And I choose the <article> article
+    When I click on the <reference> reference link
+    Then I should be redirected to the reference's landing page
+    Examples:
+      | page             | article                                                      | reference                                                         |
+      | Focus            | The Flowtime Technique: A Pomodoro Alternative               | Urgent Pigeon: Asset-Based Thinking: What can I build upon?       |
+      | Leadership       | How to Deal With Coworkers Who Complain A Lot                | Harvard Business Review: Managing a Chronic Complainer            |
+      | Diet & Nutrition | How to Create a Delicious and Healthy Meal Plan for the Week | Healthy Eating Dr: How Much Water Do You Need to Drink Every Day? |
 
