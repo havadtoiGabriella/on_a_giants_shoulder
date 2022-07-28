@@ -1,7 +1,8 @@
-package com.giantshoulder.pageobject;
+package com.giantshoulder.pageobject.procrastinaton;
 
 import static com.giantshoulder.util.WebElementHandler.*;
 import com.giantshoulder.logger.Logger;
+import com.giantshoulder.pageobject.BasePage;
 import com.giantshoulder.util.WebElementAssertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,13 +23,19 @@ public class HackingProcrastinationCourseRegistrationPage extends BasePage {
     @FindBy(id = "row-163")
     private WebElement registrationPanel;
 
-    public void registerUser(String name, String emailAddress) {
+    public void registerUser(String name, String email) {
         LOGGER.info("Waiting for registration panel to be visible.");
         waitForRegistrationPanel();
-        LOGGER.info("Registering user for 'Hacking Procrastination' webinar");
+        LOGGER.info("Filling name field with " + name);
         fillNameFieldWith(name);
-        fillEmailFieldWith(emailAddress);
+        LOGGER.info("Filling email field with " + email);
+        fillEmailFieldWith(email);
+        LOGGER.info("Clicking on the registration button");
         clickOnRegisterButton();
+        LOGGER.info("Waiting for registration panel to be visible.");
+        waitForElementToBeVisible(registrationPanel, driver);
+        LOGGER.info("Clicking on the registration button");
+        clickOn(registerButton, driver);
     }
 
     private void waitForRegistrationPanel() {

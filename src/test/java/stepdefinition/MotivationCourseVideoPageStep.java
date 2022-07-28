@@ -1,6 +1,6 @@
 package stepdefinition;
 
-import com.giantshoulder.pageobject.MotivationCourseVideoPage;
+import com.giantshoulder.pageobject.motivation.MotivationCourseVideoPage;
 import cucumber.api.java.en.Then;
 
 public class MotivationCourseVideoPageStep extends BaseStepDefinition {

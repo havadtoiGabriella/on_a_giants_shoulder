@@ -1,6 +1,6 @@
 package stepdefinition;
 
-import com.giantshoulder.pageobject.SparkYourMotivationCourseRegistrationPage;
+import com.giantshoulder.pageobject.motivation.SparkYourMotivationCourseRegistrationPage;
 import cucumber.api.java.en.When;
 
 public class SparkYourMotivationRegistrationPageStep extends BaseStepDefinition {

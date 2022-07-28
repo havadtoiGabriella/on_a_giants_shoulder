@@ -1,9 +1,9 @@
 package stepdefinition;
 
-import com.giantshoulder.pageobject.HackingProcrastinationCourseRegistrationPage;
+import com.giantshoulder.pageobject.procrastinaton.HackingProcrastinationCourseRegistrationPage;
 import cucumber.api.java.en.When;
 
-public class HackingProcrastinationRegistrationStep extends BaseStepDefinition {
+public class HackingProcrastinationRegistrationPageStep extends BaseStepDefinition {
     private final HackingProcrastinationCourseRegistrationPage hackProcrastinationPage = new HackingProcrastinationCourseRegistrationPage(driver);
 
     @When("I register for the 'Hacking Procrastination' course")

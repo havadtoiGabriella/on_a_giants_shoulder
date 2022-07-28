@@ -1,7 +1,8 @@
-package com.giantshoulder.pageobject;
+package com.giantshoulder.pageobject.motivation;
 
 import static com.giantshoulder.util.WebElementHandler.*;
 import com.giantshoulder.logger.Logger;
+import com.giantshoulder.pageobject.BasePage;
 import com.giantshoulder.util.WebElementAssertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -26,17 +27,21 @@ public class ActivateYourMotivationCourseRegistrationPage extends BasePage {
     @FindBy(id = "row--61067")
     private WebElement registrationPanel;
 
-    public void registerUser(String name, String email, String option){
+    public void registerUser(String name, String email, String option) {
         LOGGER.info("Waiting for registration panel to be visible.");
-        waitForElementToBeVisible(registrationPanel, driver);
+        waitForRegistrationPanel();
         LOGGER.info("Filling name field with " + name);
-        sendKeysTo(nameInputField, name);
+        fillNameFieldWith(name);
         LOGGER.info("Filling email field with " + email);
-        sendKeysTo(emailInputField, email);
+        fillEmailFieldWith(email);
         LOGGER.info("Selecting from dropdown by visible name: " + option);
-        selectByTextFrom(selectDateDropdown, option);
+        fromDropdownSelect(option);
         LOGGER.info("Clicking on the registration button");
-        clickOn(registerButton, driver);
+        clickOnRegisterButton();
+    }
+
+    private void waitForRegistrationPanel() {
+        waitForElementToBeVisible(registrationPanel, driver);
     }
 
     private void fillNameFieldWith(String name) {
@@ -51,7 +56,7 @@ public class ActivateYourMotivationCourseRegistrationPage extends BasePage {
         selectByTextFrom(selectDateDropdown, option);
     }
 
-    private void clickOnRegisterButtonThirtyMinutes() {
+    private void clickOnRegisterButton() {
         clickOn(registerButton, driver);
     }
 

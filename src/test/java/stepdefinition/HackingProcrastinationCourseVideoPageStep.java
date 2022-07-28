@@ -1,6 +1,6 @@
 package stepdefinition;
 
-import com.giantshoulder.pageobject.HackingProcrastinationCourseVideoPage;
+import com.giantshoulder.pageobject.procrastinaton.HackingProcrastinationCourseVideoPage;
 import cucumber.api.java.en.Then;
 
 public class HackingProcrastinationCourseVideoPageStep extends BaseStepDefinition{

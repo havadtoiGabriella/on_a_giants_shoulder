@@ -23,9 +23,9 @@ Feature: Free course registration test
   Scenario: Register to 'Spark Your Learning Genius' course
     Given I choose 'Spark Your Learning Genius' course
     When I register for the 'Spark Your Learning Genius' course
-    Then I should see the course video
+    Then I should see the 'Spark Your Learning Genius' course video
 
   Scenario: Register to 'Spark Your Learning Genius' course
     Given I choose 'Spark Your Learning Genius' course
     When I register for the 'Supercharge Your Mental Ability with 3 Simple Principles' course
-    Then I should see the course video
+    Then I should see the 'Spark Your Learning Genius' course video
