@@ -1,4 +1,4 @@
-package com.giantshoulder.pageobject.procrastinaton;
+package com.giantshoulder.pageobject.procrastination;
 
 import static com.giantshoulder.util.WebElementHandler.*;
 import com.giantshoulder.logger.Logger;
@@ -26,9 +26,9 @@ public class HackingProcrastinationCourseRegistrationPage extends BasePage {
     public void registerUser(String name, String email) {
         LOGGER.info("Waiting for registration panel to be visible.");
         waitForRegistrationPanel();
-        LOGGER.info("Filling name field with " + name);
+        LOGGER.info("Filling name field with '" + name + "'");
         fillNameFieldWith(name);
-        LOGGER.info("Filling email field with " + email);
+        LOGGER.info("Filling email field with '" + email + "'");
         fillEmailFieldWith(email);
         LOGGER.info("Clicking on the registration button");
         clickOnRegisterButton();

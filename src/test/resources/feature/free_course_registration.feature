@@ -5,27 +5,27 @@ Feature: Free course registration test
     And I accept the data handling dialog box
     And I navigate to the free courses page
 
-  Scenario: Register to 'Activate Your Motivation' course
+  Scenario: Register for 'Activate Your Motivation' course
     Given I choose 'Activate Your Motivation' course
     When I register for the 'Activate Your Motivation' course
     Then I should see the 'Activate Your Motivation' course video
 
-  Scenario: Register to 'Activate Your Motivation' course
+  Scenario: Register for '3 Steps To Spark Your Motivation And Take Action... ' course
     Given I choose 'Activate Your Motivation' course
     When I register for the '3 Steps To Spark Your Motivation And Take Action... ' course
     Then I should see the 'Activate Your Motivation' course video
 
-  Scenario: Register to 'Hacking Procrastination 4-Day Workshop' course
+  Scenario: Register for 'Hacking Procrastination 4-Day Workshop' course
     Given I choose 'Hacking Procrastination 4-Day Workshop' course
     When I register for the 'Hacking Procrastination' course
     Then I should see the 'Hacking Procrastination' course video
 
-  Scenario: Register to 'Spark Your Learning Genius' course
+  Scenario: Register for 'Spark Your Learning Genius' course
     Given I choose 'Spark Your Learning Genius' course
     When I register for the 'Spark Your Learning Genius' course
     Then I should see the 'Spark Your Learning Genius' course video
 
-  Scenario: Register to 'Spark Your Learning Genius' course
+  Scenario: Register for 'Supercharge Your Mental Ability with 3 Simple Principles' course
     Given I choose 'Spark Your Learning Genius' course
     When I register for the 'Supercharge Your Mental Ability with 3 Simple Principles' course
     Then I should see the 'Spark Your Learning Genius' course video

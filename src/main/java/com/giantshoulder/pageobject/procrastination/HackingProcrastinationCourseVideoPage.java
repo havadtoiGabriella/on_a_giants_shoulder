@@ -1,4 +1,4 @@
-package com.giantshoulder.pageobject.procrastinaton;
+package com.giantshoulder.pageobject.procrastination;
 
 import static com.giantshoulder.util.WebElementAssertions.elementIsDisplayed;
 import static com.giantshoulder.util.WebElementAssertions.validatePageTitle;

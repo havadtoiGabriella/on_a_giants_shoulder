@@ -1,6 +1,6 @@
 package stepdefinition;
 
-import com.giantshoulder.pageobject.procrastinaton.HackingProcrastinationCourseRegistrationPage;
+import com.giantshoulder.pageobject.procrastination.HackingProcrastinationCourseRegistrationPage;
 import cucumber.api.java.en.When;
 
 public class HackingProcrastinationRegistrationPageStep extends BaseStepDefinition {

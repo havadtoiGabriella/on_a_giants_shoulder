@@ -30,11 +30,11 @@ public class ActivateYourMotivationCourseRegistrationPage extends BasePage {
     public void registerUser(String name, String email, String option) {
         LOGGER.info("Waiting for registration panel to be visible.");
         waitForRegistrationPanel();
-        LOGGER.info("Filling name field with " + name);
+        LOGGER.info("Filling name field with '" + name + "'");
         fillNameFieldWith(name);
-        LOGGER.info("Filling email field with " + email);
+        LOGGER.info("Filling email field with '" + email + "'");
         fillEmailFieldWith(email);
-        LOGGER.info("Selecting from dropdown by visible name: " + option);
+        LOGGER.info("Selecting from dropdown by visible name: '" + option + "'");
         fromDropdownSelect(option);
         LOGGER.info("Clicking on the registration button");
         clickOnRegisterButton();
