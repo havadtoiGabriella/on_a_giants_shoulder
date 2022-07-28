@@ -16,6 +16,13 @@ public class MotivationCourseVideoPage extends BasePage {
     @FindBy(css = "[data-cfvimeo-url ='https://vimeo.com/358702273']")
     private WebElement video;
 
+    public void validatingIfCorrectVideoIsDisplayed() {
+        LOGGER.info("Validating if correct page is loaded");
+        validatingIfCorrectPageIsLoaded();
+        LOGGER.info("Waiting for the video to be visible.");
+        waitForVideoToBeDisplayed();
+    }
+
     private void validatingIfCorrectPageIsLoaded() {
         validatePageTitle(pageTitle, driver);
     }
@@ -23,13 +30,6 @@ public class MotivationCourseVideoPage extends BasePage {
     private void waitForVideoToBeDisplayed() {
         waitForElementToBeVisible(video, driver);
         elementIsDisplayed(video, "video");
-    }
-
-    public void validatingIfCorrectVideoIsDisplayed() {
-        LOGGER.info("Validating if correct page is loaded");
-        validatingIfCorrectPageIsLoaded();
-        LOGGER.info("Waiting for the video to be visible.");
-        waitForVideoToBeDisplayed();
     }
 
     public MotivationCourseVideoPage(ChromeDriver driver) {

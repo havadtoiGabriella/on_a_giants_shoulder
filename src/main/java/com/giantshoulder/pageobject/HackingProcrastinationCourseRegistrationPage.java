@@ -22,16 +22,17 @@ public class HackingProcrastinationCourseRegistrationPage extends BasePage {
     @FindBy(id = "row-163")
     private WebElement registrationPanel;
 
-    public void waitForRegistrationPanel() {
-        LOGGER.info("Waiting for registration panel to be visible.");
-        waitForElementToBeVisible(registrationPanel, driver);
-    }
-
     public void registerUser(String name, String emailAddress) {
+        LOGGER.info("Waiting for registration panel to be visible.");
+        waitForRegistrationPanel();
         LOGGER.info("Registering user for 'Hacking Procrastination' webinar");
         fillNameFieldWith(name);
         fillEmailFieldWith(emailAddress);
         clickOnRegisterButton();
+    }
+
+    private void waitForRegistrationPanel() {
+        waitForElementToBeVisible(registrationPanel, driver);
     }
 
     private void fillNameFieldWith(String name) {

@@ -8,7 +8,6 @@ public class HackingProcrastinationRegistrationStep extends BaseStepDefinition {
 
     @When("I register for the 'Hacking Procrastination' course")
     public void i_register_for_the_hacking_procrastination_course() {
-        hackProcrastinationPage.waitForRegistrationPanel();
         hackProcrastinationPage.registerUser("My name", "onagiantsshoulder@gmail.com");
     }
 }

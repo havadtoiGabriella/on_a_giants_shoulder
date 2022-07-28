@@ -18,7 +18,7 @@ Feature: Free course registration test
   Scenario: Register to 'Hacking Procrastination 4-Day Workshop' course
     Given I choose 'Hacking Procrastination 4-Day Workshop' course
     When I register for the 'Hacking Procrastination' course
-    Then I should see the course video
+    Then I should see the 'Hacking Procrastination' course video
 
   Scenario: Register to 'Spark Your Learning Genius' course
     Given I choose 'Spark Your Learning Genius' course
