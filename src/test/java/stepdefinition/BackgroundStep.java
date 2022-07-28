@@ -5,7 +5,6 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 
 public class BackgroundStep extends BaseStepDefinition {
-
     private final HomePage homePage = new HomePage(driver);
 
     @Given("I navigate to the main page")

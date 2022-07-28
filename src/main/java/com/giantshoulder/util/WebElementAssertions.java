@@ -11,7 +11,7 @@ public final class WebElementAssertions {
     private WebElementAssertions() {
     }
 
-    public static void elementIsDisplayed(WebElement element, String elementName) {
+    public static void elementIsDisplayed(WebElement element) {
         LOGGER.debug("Validating if the element is displayed.");
         assertThat(element.isDisplayed()).isTrue();
     }

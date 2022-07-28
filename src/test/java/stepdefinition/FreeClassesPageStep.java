@@ -4,7 +4,6 @@ import com.giantshoulder.pageobject.FreeClassesPage;
 import cucumber.api.java.en.Given;
 
 public class FreeClassesPageStep extends BaseStepDefinition {
-
     private final FreeClassesPage freeClassesPage = new FreeClassesPage(driver);
 
     @Given("I choose 'Activate Your Motivation' course")

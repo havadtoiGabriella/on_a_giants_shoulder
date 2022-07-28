@@ -20,7 +20,7 @@ public class HackingProcrastinationCourseVideoPage extends BasePage {
         LOGGER.info("Validating if correct page is loaded");
         validatingIfCorrectPageIsLoaded();
         LOGGER.info("Waiting for the video to be visible.");
-        waitForVideoToBeDisplayed();
+        validatingIfVideoIsDisplayed();
     }
 
     private void validatingIfCorrectPageIsLoaded() {
@@ -28,9 +28,9 @@ public class HackingProcrastinationCourseVideoPage extends BasePage {
         validatePageTitle(pageTitle, driver);
     }
 
-    private void waitForVideoToBeDisplayed() {
+    private void validatingIfVideoIsDisplayed() {
         waitForElementToBeVisible(video, driver);
-        elementIsDisplayed(video, "video");
+        elementIsDisplayed(video);
     }
 
     public HackingProcrastinationCourseVideoPage(ChromeDriver driver) {

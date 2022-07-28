@@ -1,7 +1,6 @@
 package com.giantshoulder.pageobject.learninggenius;
 
 import static com.giantshoulder.util.WebElementHandler.*;
-import static com.giantshoulder.util.WebElementHandler.clickOn;
 import com.giantshoulder.logger.Logger;
 import com.giantshoulder.pageobject.BasePage;
 import com.giantshoulder.util.WebElementAssertions;
@@ -64,5 +63,4 @@ public class SuperchargeMentalAbilityCourseRegistrationPage extends BasePage {
     public SuperchargeMentalAbilityCourseRegistrationPage(ChromeDriver driver) {
         super(driver);
     }
-
 }
