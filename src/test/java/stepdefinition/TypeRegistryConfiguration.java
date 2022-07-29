@@ -1,7 +1,7 @@
 package stepdefinition;
 
 import java.util.Locale;
-import com.giantshoulder.registrationdatatype.RegistrationDataType;
+import com.giantshoulder.registrationdatatype.RegistrationData;
 import cucumber.api.TypeRegistry;
 import cucumber.api.TypeRegistryConfigurer;
 import io.cucumber.cucumberexpressions.ParameterType;
@@ -21,9 +21,9 @@ public class TypeRegistryConfiguration implements TypeRegistryConfigurer {
 
     private void addPageTypeConverter(TypeRegistry typeRegistry) {
         typeRegistry.defineParameterType(new ParameterType<>(
-                "registrationDataType",
+                "registrationData",
                 ".*",
-                RegistrationDataType.class,
-                (Transformer<RegistrationDataType>) RegistrationDataType::valueOf));
+                RegistrationData.class,
+                (Transformer<RegistrationData>) RegistrationData::valueOf));
     }
 }

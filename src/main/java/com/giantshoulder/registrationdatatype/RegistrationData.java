@@ -1,13 +1,13 @@
 package com.giantshoulder.registrationdatatype;
 
-public enum RegistrationDataType {
+public enum RegistrationData {
     USER("My Name", "onagiantsshoulder@gmail.com", "Watch Yesterday's Broadcast Now");
 
     private final String name;
     private final String email;
     private final String date;
 
-    RegistrationDataType(String name, String email, String date) {
+    RegistrationData(String name, String email, String date) {
         this.name = name;
         this.email = email;
         this.date = date;
