@@ -1,17 +1,21 @@
 package com.giantshoulder.registrationdatatype;
 
 public enum RegistrationDataType {
-    NAME("My Name"),
-    EMAIL("onagiantsshoulder@gmail.com");
+    USER("My Name", "onagiantsshoulder@gmail.com");
 
-    private final String data;
+    private final String name;
+    private final String email;
 
-    RegistrationDataType(String data) {
-        this.data = data;
+    RegistrationDataType(String name, String email) {
+        this.name = name;
+        this.email = email;
     }
 
-    public String getData() {
-        return data;
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }
-

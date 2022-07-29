@@ -8,9 +8,8 @@ public class SuperchargeMentalAbilityRegistrationPageStep extends BaseStepDefini
     private final SuperchargeMentalAbilityCourseRegistrationPage superchargeMentalAbilityCourseRegistrationPage
             = new SuperchargeMentalAbilityCourseRegistrationPage(driver);
 
-    @When("I register for the 'Supercharge Your Mental Ability' course with {registrationDataType} and {registrationDataType}")
-    public void i_register_for_the_supercharge_mental_ability_course(RegistrationDataType NAME, RegistrationDataType EMAIL) {
-        superchargeMentalAbilityCourseRegistrationPage
-                .registerUser(NAME.getData(), EMAIL.getData(), "Watch Yesterday's Broadcast Now");
+    @When("I register for the 'Supercharge Your Mental Ability' course with {registrationDataType}")
+    public void i_register_for_the_supercharge_mental_ability_course(RegistrationDataType USER) {
+        superchargeMentalAbilityCourseRegistrationPage.registerUser(USER.getName(), USER.getEmail(), "Watch Yesterday's Broadcast Now");
     }
 }

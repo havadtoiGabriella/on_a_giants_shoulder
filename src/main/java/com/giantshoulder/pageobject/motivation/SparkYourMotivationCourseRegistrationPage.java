@@ -24,7 +24,7 @@ public class SparkYourMotivationCourseRegistrationPage extends BasePage {
     @FindBy(id = "button-79065")
     private WebElement registerButton;
 
-    public void registerUser(String name, String email, String option) throws InterruptedException {
+    public void registerUser(String name, String email, String option) {
         LOGGER.info("Waiting for registration panel to be visible.");
         waitForRegistrationPanel();
         LOGGER.info("Filling name field with '" + name + "'");
@@ -35,7 +35,6 @@ public class SparkYourMotivationCourseRegistrationPage extends BasePage {
         fromDropdownSelect(option);
         LOGGER.info("Clicking on the registration button");
         clickOnRegisterButton();
-        Thread.sleep(3000);
     }
 
     private void waitForRegistrationPanel() {

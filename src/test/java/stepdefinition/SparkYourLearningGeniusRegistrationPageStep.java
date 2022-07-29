@@ -8,9 +8,8 @@ public class SparkYourLearningGeniusRegistrationPageStep extends BaseStepDefinit
     private final SparkYourLearningGeniusCourseRegistrationPage sparkYourLearningGeniusCourseRegistrationPage
             = new SparkYourLearningGeniusCourseRegistrationPage(driver);
 
-    @When("I register for the 'Spark Your Learning Genius' course with {registrationDataType} and {registrationDataType}")
-    public void i_register_for_the_spark_your_learning_genius_course(RegistrationDataType NAME, RegistrationDataType EMAIL) {
-        sparkYourLearningGeniusCourseRegistrationPage
-                .registerUser(NAME.getData(), EMAIL.getData(), "Watch Yesterday's Broadcast Now");
+    @When("I register for the 'Spark Your Learning Genius' course with {registrationDataType}")
+    public void i_register_for_the_spark_your_learning_genius_course(RegistrationDataType USER) {
+        sparkYourLearningGeniusCourseRegistrationPage.registerUser(USER.getName(), USER.getEmail(), "Watch Yesterday's Broadcast Now");
     }
 }
