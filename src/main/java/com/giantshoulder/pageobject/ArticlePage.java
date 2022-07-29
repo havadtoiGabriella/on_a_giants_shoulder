@@ -14,6 +14,7 @@ public class ArticlePage extends BasePage {
     WebElement articleHeading;
 
     public void checkIfCorrectPageIsLoaded(String articleTitle) {
+        LOGGER.info("Checking if the page with the correct title, '"+articleTitle+"' is loaded.");
         elementHasText(articleTitle, articleHeading);
     }
 }

@@ -15,6 +15,7 @@ public class BlogPage extends BasePage {
     List<WebElement> listOfArticleTitles;
 
     public void clickOnArticle(String articleTitle) {
+        LOGGER.info("Opening the article with the title '"+articleTitle+"'");
         for (WebElement title : listOfArticleTitles) {
             if (title.getText().equals(articleTitle)) {
                 clickOn(title, driver);
