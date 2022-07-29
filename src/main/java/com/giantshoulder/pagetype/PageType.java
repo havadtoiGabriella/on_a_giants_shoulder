@@ -2,12 +2,11 @@ package com.giantshoulder.pagetype;
 
 public enum PageType {
     FOCUS("focus"),
-    ENTREPRENEUR("entrepreneur-work"),
     DIET_AND_NUTRITION("diet-and-nutrition"),
     LIFE_BALANCE("life-balance"),
     GOAL_GETTING("goal-getting"),
     SUCCESS_MINDSET("success-mindset"),
-    LEADERSHIP("leadership-productivity");
+    MENTAL_WELLNESS("mental-wellness");
 
     private final String urlFragment;
 

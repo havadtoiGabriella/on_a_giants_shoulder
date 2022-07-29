@@ -33,20 +33,20 @@ Feature: Blog articles test
     Examples:
       | page               | article                                                      | author            |
       | FOCUS              | The Flowtime Technique: A Pomodoro Alternative               | Chris Porteous    |
-      | LEADERSHIP         | How to Deal With Coworkers Who Complain A Lot                | Yair Nativ        |
+      | MENTAL_WELLNESS    | What Causes An Anxiety Spiral And How To Prevent It          | Leah Borski       |
       | DIET_AND_NUTRITION | How to Create a Delicious and Healthy Meal Plan for the Week | Dr. Harriet Holme |
 
- # Scenario Outline: Opening 'Posts' on blog article author's profile page
-   #  Given I open the <page> blog page
-   #  And I choose the <article> article
-   # And I click on <author> author's name
-   # When I click on 'Posts'
-   # Then I should see all the posts that <author> wrote
-   # Examples:
-   #   | page             | article                                                      | author            |
-   #   | Focus            | The Flowtime Technique: A Pomodoro Alternative               | Chris Porteous    |
-   #   | Leadership       | How to Deal With Coworkers Who Complain A Lot                | Yair Nativ        |
-   #   | Diet & Nutrition | How to Create a Delicious and Healthy Meal Plan for the Week | Dr. Harriet Holme |
+  Scenario Outline: Opening 'Posts' on blog article author's profile page
+    Given I navigate to the <page> blog page
+    And I choose the "<article>" article
+    And I click on "<author>" author's name
+    When I click on 'Posts'
+    Then I should see that the posts that "<author>" wrote contains "<article>"
+    Examples:
+      | page               | article                                                      | author            |
+      | FOCUS              | The Flowtime Technique: A Pomodoro Alternative               | Chris Porteous    |
+      | MENTAL_WELLNESS    | What is Compassion Fatigue And Signs You May Have It         | Nancy Solari      |
+      | DIET_AND_NUTRITION | How to Create a Delicious and Healthy Meal Plan for the Week | Dr. Harriet Holme |
 
   # Scenario Outline: Opening a blog article's Reference page
   #  Given I open the <page> blog page
