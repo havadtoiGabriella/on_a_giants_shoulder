@@ -6,7 +6,8 @@ public enum PageType {
     DIET_AND_NUTRITION("diet-and-nutrition"),
     LIFE_BALANCE("life-balance"),
     GOAL_GETTING("goal-getting"),
-    SUCCESS_MINDSET("success-mindset");
+    SUCCESS_MINDSET("success-mindset"),
+    LEADERSHIP("leadership-productivity");
 
     private final String urlFragment;
 

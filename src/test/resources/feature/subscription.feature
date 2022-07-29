@@ -26,10 +26,10 @@ Feature: Blog articles test
       | SUCCESS_MINDSET | How to Work Hard the Smart Way: 4 Daily Rituals to Follow |
 
   Scenario Outline: Opening a blog article author's profile page
-    Given I open the <page> blog page
+    Given I navigate to the <page> blog page
     And I choose the "<article>" article
-    When I click on "<writer>" writer's name
-    Then I should be redirected to "<writer>" author's profile page
+    When I click on "<author>" author's name
+    Then I should be redirected to "<author>" author's profile page
     Examples:
       | page               | article                                                      | author            |
       | FOCUS              | The Flowtime Technique: A Pomodoro Alternative               | Chris Porteous    |
