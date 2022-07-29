@@ -2,7 +2,7 @@ package com.giantshoulder.pagetype;
 
 public enum PageType {
     FOCUS("focus"),
-    LEADERSHIP("leadership-productivity"),
+    ENTREPRENEUR("entrepreneur-work"),
     DIET_AND_NUTRITION("diet-and-nutrition"),
     LIFE_BALANCE("life-balance"),
     GOAL_GETTING("goal-getting"),

@@ -1,19 +1,13 @@
 package stepdefinition;
 
-import com.giantshoulder.pageobject.HomePage;
-import com.giantshoulder.pagetype.PageType;
-import cucumber.api.java.en.Given;
+import com.giantshoulder.pageobject.BlogPage;
+import cucumber.api.java.en.When;
 
 public class BlogPageStep extends BaseStepDefinition {
 
-    @Given("I navigate to the {pageType} blog page")
-    public void i_navigate_to_the_x_blog_page(PageType pageType) {
-        HomePage homePage = new HomePage(driver);
-        homePage.clickOnBlogMenuItem();
-        homePage.clickOnBlogPage(pageType);
-    }
-
-    @Given("I navigate to the {string} blog page")
-    public void iNavigateToTheBlogPage(String arg0) {
+    @When("I choose the {string} article")
+    public void i_choose_the_x_article(String articleTitle) {
+        BlogPage blogPage = new BlogPage(driver);
+        blogPage.clickOnArticle(articleTitle);
     }
 }

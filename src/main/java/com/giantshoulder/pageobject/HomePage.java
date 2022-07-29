@@ -17,7 +17,7 @@ public class HomePage extends BasePage {
 
     public void acceptDataConsentPanel() {
         waitForElementToBeVisible(dataConsentButton, driver);
-        clickOn(dataConsentButton,driver);
+        clickOn(dataConsentButton, driver);
     }
 
     public void clickOnBlogMenuItem() {

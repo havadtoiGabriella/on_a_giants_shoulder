@@ -6,6 +6,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 import com.giantshoulder.logger.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public final class WebElementHandler {
@@ -17,20 +18,20 @@ public final class WebElementHandler {
     }
 
     public static void waitForElementToBeVisible(WebElement element, ChromeDriver driver) {
-        LOGGER.info("Waiting for element to be visible.");
+        LOGGER.debug("Waiting for element to be visible.");
         WebDriverWait wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
         wait.withTimeout(ofSeconds(WAIT_TIMEOUT)).until(visibilityOf(element));
     }
 
     public static void clickOn(WebElement element, ChromeDriver driver) {
-        LOGGER.info("Clicking on element.");
+        LOGGER.debug("Clicking on element.");
         WebDriverWait wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
         wait.withTimeout(ofSeconds(WAIT_TIMEOUT)).until(elementToBeClickable(element));
         element.click();
     }
 
     public static void sendKeysTo(WebElement inputField, String text) {
-        LOGGER.info("Sending text to element");
+        LOGGER.debug("Sending text to element");
         inputField.sendKeys(text);
     }
 }
