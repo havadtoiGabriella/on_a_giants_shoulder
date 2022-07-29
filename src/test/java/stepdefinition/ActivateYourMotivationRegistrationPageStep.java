@@ -9,6 +9,6 @@ public class ActivateYourMotivationRegistrationPageStep extends BaseStepDefiniti
 
     @When("I register for the 'Activate Your Motivation' course with {registrationDataType}")
     public void i_register_for_the_activate_your_motivation_course(RegistrationDataType USER) {
-        activateYourMotivationPage.registerUser(USER.getName(), USER.getEmail(), "Watch Yesterday's Broadcast Now");
+        activateYourMotivationPage.registerUser(USER.getName(), USER.getEmail(), USER.getDate());
     }
 }

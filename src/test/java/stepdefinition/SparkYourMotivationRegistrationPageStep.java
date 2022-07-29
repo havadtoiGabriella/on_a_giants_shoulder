@@ -10,6 +10,6 @@ public class SparkYourMotivationRegistrationPageStep extends BaseStepDefinition 
 
     @When("I register for the '3 Steps To Spark Your Motivation' course with {registrationDataType}")
     public void i_register_for_the_3_steps_to_spark_your_motivation_course(RegistrationDataType USER) {
-        sparkYourMotivationCourseRegistrationPage.registerUser(USER.getName(), USER.getEmail(), "Watch Yesterday's Broadcast Now");
+        sparkYourMotivationCourseRegistrationPage.registerUser(USER.getName(), USER.getEmail(), USER.getDate());
     }
 }

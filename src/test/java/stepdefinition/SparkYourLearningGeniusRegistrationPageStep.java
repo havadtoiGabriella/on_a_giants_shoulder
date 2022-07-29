@@ -10,6 +10,6 @@ public class SparkYourLearningGeniusRegistrationPageStep extends BaseStepDefinit
 
     @When("I register for the 'Spark Your Learning Genius' course with {registrationDataType}")
     public void i_register_for_the_spark_your_learning_genius_course(RegistrationDataType USER) {
-        sparkYourLearningGeniusCourseRegistrationPage.registerUser(USER.getName(), USER.getEmail(), "Watch Yesterday's Broadcast Now");
+        sparkYourLearningGeniusCourseRegistrationPage.registerUser(USER.getName(), USER.getEmail(), USER.getDate());
     }
 }
