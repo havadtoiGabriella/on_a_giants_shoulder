@@ -1,14 +1,11 @@
 package com.giantshoulder.pageobject;
 
 import static com.giantshoulder.util.WebElementHandler.clickOn;
-import com.giantshoulder.logger.Logger;
-import com.giantshoulder.util.WebElementAssertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class FreeClassesPage extends BasePage {
-    private static final Logger LOGGER = new Logger(WebElementAssertions.class);
 
     @FindBy(linkText = "Jumpstart My Motivation")
     private WebElement jumpstartMyMotivationButton;

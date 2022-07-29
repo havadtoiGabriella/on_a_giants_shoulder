@@ -1,15 +1,12 @@
 package com.giantshoulder.pageobject.procrastination;
 
 import static com.giantshoulder.util.WebElementHandler.*;
-import com.giantshoulder.logger.Logger;
 import com.giantshoulder.pageobject.BasePage;
-import com.giantshoulder.util.WebElementAssertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class HackingProcrastinationCourseRegistrationPage extends BasePage {
-    private static final Logger LOGGER = new Logger(WebElementAssertions.class);
 
     @FindBy(name = "first_name")
     private WebElement nameInputField;

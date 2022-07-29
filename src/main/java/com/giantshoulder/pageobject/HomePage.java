@@ -2,14 +2,11 @@ package com.giantshoulder.pageobject;
 
 import static com.giantshoulder.util.WebElementHandler.clickOn;
 import static com.giantshoulder.util.WebElementHandler.waitForElementToBeVisible;
-import com.giantshoulder.logger.Logger;
-import com.giantshoulder.util.WebElementAssertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
-    private static final Logger LOGGER = new Logger(WebElementAssertions.class);
 
     @FindBy(css = ".fc-button.fc-cta-consent.fc-primary-button")
     private WebElement dataConsentButton;
