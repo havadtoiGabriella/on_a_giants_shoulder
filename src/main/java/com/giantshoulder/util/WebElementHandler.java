@@ -1,12 +1,12 @@
 package com.giantshoulder.util;
 
 import static java.time.Duration.ofSeconds;
-import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 import com.giantshoulder.logger.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public final class WebElementHandler {
@@ -30,8 +30,15 @@ public final class WebElementHandler {
         element.click();
     }
 
-    public static void sendKeysTo(WebElement inputField, String text) {
-        LOGGER.debug("Sending text to element");
-        inputField.sendKeys(text);
+    public static void scrollIntoView(WebElement element, ChromeDriver driver) {
+        LOGGER.debug("Moving to element");
+        JavascriptExecutor js = driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public static void waitForNumberOfElementsToBeMoreThan(int number, By locator, ChromeDriver driver) {
+        LOGGER.debug("Waiting for number of elements to be more than " + number);
+        WebDriverWait wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
+        wait.withTimeout(ofSeconds(WAIT_TIMEOUT)).until(numberOfElementsToBeMoreThan(locator, number));
     }
 }
