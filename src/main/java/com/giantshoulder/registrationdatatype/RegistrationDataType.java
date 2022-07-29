@@ -1,4 +1,4 @@
-package com.giantshoulder.pagetype;
+package com.giantshoulder.registrationdatatype;
 
 public enum RegistrationDataType {
     NAME("My Name"),

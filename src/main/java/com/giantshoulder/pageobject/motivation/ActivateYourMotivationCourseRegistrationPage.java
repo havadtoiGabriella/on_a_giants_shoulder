@@ -1,10 +1,7 @@
 package com.giantshoulder.pageobject.motivation;
 
-import static com.giantshoulder.pagetype.RegistrationDataType.EMAIL;
-import static com.giantshoulder.pagetype.RegistrationDataType.NAME;
 import static com.giantshoulder.util.WebElementHandler.*;
 import com.giantshoulder.pageobject.BasePage;
-import com.giantshoulder.pagetype.RegistrationDataType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,10 +27,10 @@ public class ActivateYourMotivationCourseRegistrationPage extends BasePage {
     public void registerUser(String name, String email, String option) {
         LOGGER.info("Waiting for registration panel to be visible.");
         waitForRegistrationPanel();
-        LOGGER.info("Filling name field with '" + NAME.getData() + "'");
-        fillNameFieldWith(NAME.getData());
-        LOGGER.info("Filling email field with '" + EMAIL.getData() + "'");
-        fillEmailFieldWith(EMAIL.getData());
+        LOGGER.info("Filling name field with '" + name + "'");
+        fillNameFieldWith(name);
+        LOGGER.info("Filling email field with '" + email + "'");
+        fillEmailFieldWith(email);
         LOGGER.info("Selecting from dropdown by visible name: '" + option + "'");
         fromDropdownSelect(option);
         LOGGER.info("Clicking on the registration button");

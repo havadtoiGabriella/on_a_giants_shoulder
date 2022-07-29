@@ -1,7 +1,7 @@
 package stepdefinition;
 
 import java.util.Locale;
-import com.giantshoulder.pagetype.RegistrationDataType;
+import com.giantshoulder.registrationdatatype.RegistrationDataType;
 import cucumber.api.TypeRegistry;
 import cucumber.api.TypeRegistryConfigurer;
 import io.cucumber.cucumberexpressions.ParameterType;
