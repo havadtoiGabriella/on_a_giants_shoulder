@@ -5,10 +5,13 @@ Feature: Free course registration test
     And I accept the data handling dialog box
     And I navigate to the free courses page
 
-  Scenario: Register for 'Activate Your Motivation' course
+  Scenario Outline: Register for 'Activate Your Motivation' course
     Given I choose 'Activate Your Motivation' course
-    When I register for the 'Activate Your Motivation' course
+    When I register for the 'Activate Your Motivation' course with <name> and <email>
     Then I should see the 'Activate Your Motivation' course video
+    Examples:
+      | name | email  |
+      | NAME | EMAIL |
 
   Scenario: Register for '3 Steps To Spark Your Motivation And Take Action... ' course
     Given I choose 'Activate Your Motivation' course
