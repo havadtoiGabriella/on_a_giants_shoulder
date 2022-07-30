@@ -11,14 +11,14 @@ public class BlogPage extends BasePage {
     private final By articleTitle = By.cssSelector("h6 a");
 
     @FindBy(css = "h6 a")
-    List<WebElement> listOfArticleTitles;
+    List<WebElement> articleTitles;
 
     @FindBy(xpath = "//a[text()='See Older Posts']")
     WebElement seeOlderPostsButton;
 
     public void clickOnArticle(String articleTitle) {
         LOGGER.info("Opening the article with the title '" + articleTitle + "'");
-        for (WebElement title : listOfArticleTitles) {
+        for (WebElement title : articleTitles) {
             if (title.getText().equals(articleTitle)) {
                 clickOn(title, driver);
                 break;
@@ -28,7 +28,7 @@ public class BlogPage extends BasePage {
 
     public void clickOnSeeOlderPostsButton() {
         LOGGER.info("Clicking on the 'See Older Posts' button'");
-        int size = listOfArticleTitles.size();
+        int size = articleTitles.size();
         scrollIntoView(seeOlderPostsButton, driver);
         clickOn(seeOlderPostsButton, driver);
         waitForNumberOfElementsToBeMoreThan(size, articleTitle, driver);
