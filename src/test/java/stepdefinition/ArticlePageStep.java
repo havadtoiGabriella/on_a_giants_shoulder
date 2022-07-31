@@ -9,8 +9,8 @@ public class ArticlePageStep extends BaseStepDefinition {
     private final ArticlePage articlePage = new ArticlePage(driver);
 
     @Then("I should be redirected to the article's landing page")
-    public void i_should_be_redirected_to_the_x_articles_landing_page() {
-        articlePage.checkIfCorrectPageIsLoaded(BlogPage.getCurrentArticleTitle());
+    public void i_should_be_redirected_to_the_articles_landing_page() {
+        articlePage.checkIfCorrectPageIsLoaded(BlogPage.getArticleTitleFromBlogPage());
     }
 
     @When("I click on the author's name")

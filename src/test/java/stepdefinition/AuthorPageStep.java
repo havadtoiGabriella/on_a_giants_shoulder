@@ -11,8 +11,8 @@ public class AuthorPageStep extends BaseStepDefinition {
     private final ArticlePage articlePage = new ArticlePage(driver);
 
     @Then("I should be redirected to the author's profile page")
-    public void i_should_be_redirected_to_x_authors_profile_page() {
-        authorPage.validatingIfTheCorrectAuthorsPageIsLoaded(articlePage.getAuthorsNameFromArticlePage());
+    public void i_should_be_redirected_to_the_authors_profile_page() {
+        authorPage.validatingIfTheCorrectAuthorsPageIsLoaded(articlePage.getAuthorsName());
     }
 
     @When("I click on 'Posts'")
@@ -22,6 +22,6 @@ public class AuthorPageStep extends BaseStepDefinition {
 
     @Then("I should see that the posts contains the previous article")
     public void i_should_see_that_the_posts_contains_the_previous_article() {
-        authorPage.validatingIfPostsContainsAuthorsArticle(BlogPage.getCurrentArticleTitle());
+        authorPage.validatingIfPostsContainsPreviousArticle(BlogPage.getArticleTitleFromBlogPage());
     }
 }

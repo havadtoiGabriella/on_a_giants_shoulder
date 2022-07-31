@@ -17,8 +17,13 @@ public final class WebElementAssertions {
                 .isEqualTo(expectedString);
     }
 
-    public static void listHasElement(List<WebElement> list, WebElement element) {
-        LOGGER.debug("Validating if the list has the element:  " + element);
-        assertThat(list.contains(element)).isTrue();
+    public static void listHasElementWithText(String text, List<WebElement> list) {
+        LOGGER.debug("Validating if the list has the element with text:  " + text);
+        for (WebElement element : list) {
+            if (element.getText().equals(text)) {
+                assertThat(list.contains(element)).isTrue();
+                break;
+            }
+        }
     }
 }

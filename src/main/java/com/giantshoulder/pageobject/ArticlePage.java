@@ -24,7 +24,7 @@ public class ArticlePage extends BasePage {
         WebElementHandler.clickOn(authorName, driver);
     }
 
-    public String getAuthorsNameFromArticlePage() {
+    public String getAuthorsName() {
         return authorName.getText();
     }
 

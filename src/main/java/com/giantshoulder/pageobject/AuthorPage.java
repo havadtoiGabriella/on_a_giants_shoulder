@@ -1,7 +1,6 @@
 package com.giantshoulder.pageobject;
 
-import static com.giantshoulder.util.WebElementAssertions.elementHasText;
-import static com.giantshoulder.util.WebElementAssertions.listHasElement;
+import static com.giantshoulder.util.WebElementAssertions.*;
 import static com.giantshoulder.util.WebElementHandler.clickOn;
 import java.util.List;
 import org.openqa.selenium.WebElement;
@@ -29,11 +28,9 @@ public class AuthorPage extends BasePage {
         clickOn(postsLink, driver);
     }
 
-    public void validatingIfPostsContainsAuthorsArticle(String article) {
-        LOGGER.info("Validating if the author's, " + authorName.getText() + ", posts contains the article: " + article);
-        for (WebElement articleTitle : articles) {
-            listHasElement(articles, articleTitle);
-        }
+    public void validatingIfPostsContainsPreviousArticle(String articleTitle) {
+        LOGGER.info("Validating if the author's, " + authorName.getText() + ", posts contains the article: " + articleTitle);
+        listHasElementWithText(articleTitle, articles);
     }
 
     public AuthorPage(ChromeDriver driver) {
