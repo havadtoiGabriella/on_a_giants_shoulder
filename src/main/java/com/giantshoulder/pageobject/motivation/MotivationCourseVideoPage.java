@@ -18,7 +18,7 @@ public class MotivationCourseVideoPage extends BasePage {
         waitForPageToLoad();
         LOGGER.info("Validating if correct page is loaded");
         validatingIfPageTitleIsCorrect();
-        LOGGER.info("Waiting for the video to be visible.");
+        LOGGER.info("Validating if video is displayed.");
         validatingIfVideoIsDisplayed();
     }
 

@@ -3,7 +3,7 @@ package stepdefinition;
 import com.giantshoulder.pageobject.procrastination.HackingProcrastinationCourseVideoPage;
 import cucumber.api.java.en.Then;
 
-public class HackingProcrastinationCourseVideoPageStep extends BaseStepDefinition{
+public class HackingProcrastinationCourseVideoPageStep extends BaseStepDefinition {
     public final HackingProcrastinationCourseVideoPage hackingProcrastinationCourseVideoPage = new HackingProcrastinationCourseVideoPage(driver);
 
     @Then("I should see the 'Hacking Procrastination' course video")

@@ -7,13 +7,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class FreeClassesPage extends BasePage {
 
-    @FindBy(linkText = "Jumpstart My Motivation")
+    @FindBy(css = "[href='http://g.lifehack.org/activate-your-motivation-register?utm_source=blog&utm_medium=page&utm_campaign=free_classes']")
     private WebElement jumpstartMyMotivationButton;
 
-    @FindBy(linkText = "Eliminate Procrastination")
+    @FindBy(css = "[href*='http://g.lifehack.org/hacking-procrastination-register?utm_source=blog&utm_medium=page&utm_campaign=free_classes']")
     private WebElement eliminateProcrastinationButton;
 
-    @FindBy(linkText = "Boost My Learning Power")
+    @FindBy(css = "[href='http://g.lifehack.org/spark-your-learning-genius-register?utm_source=blog&utm_medium=page&utm_campaign=free_classes']")
     private WebElement boostMyLearningPowerButton;
 
     public void clickOnJumpstartMyMotivationButton() {
