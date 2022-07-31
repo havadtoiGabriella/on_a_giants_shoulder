@@ -11,8 +11,13 @@ public final class WebElementAssertions {
     }
 
     public static void elementHasText(String expectedString, WebElement element, String elementName) {
-        LOGGER.info("Validating if the " + elementName + " has the text:  " + expectedString);
+        LOGGER.debug("Validating if the " + elementName + " has the text:  " + expectedString);
         assertThat(element.getText().trim())
                 .isEqualTo(expectedString);
+    }
+
+    public static void elementHasCorrectUrl(String expectedUrl, WebElement element){
+        LOGGER.debug("Validating if the element url points to the right page");
+        assertThat(element.getAttribute("href")).isEqualTo(expectedUrl);
     }
 }
