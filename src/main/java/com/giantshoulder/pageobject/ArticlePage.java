@@ -19,9 +19,13 @@ public class ArticlePage extends BasePage {
         elementHasText(articleTitle, articleHeading);
     }
 
-    public void clickOnAuthorsName(String author) {
-        LOGGER.info("Clicking on the name of the author: " + author);
+    public void clickOnAuthorsName() {
+        LOGGER.info("Clicking on the name of the author: " + authorName.getText());
         WebElementHandler.clickOn(authorName, driver);
+    }
+
+    public String getAuthorsNameFromArticlePage() {
+        return authorName.getText();
     }
 
     public ArticlePage(ChromeDriver driver) {

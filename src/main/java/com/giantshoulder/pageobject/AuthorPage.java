@@ -29,8 +29,8 @@ public class AuthorPage extends BasePage {
         clickOn(postsLink, driver);
     }
 
-    public void validatingIfPostsContainsAuthorsArticle(String authorsName, String article) {
-        LOGGER.info("Validating if the author's, " + authorsName + ", posts contains the article: " + article);
+    public void validatingIfPostsContainsAuthorsArticle(String article) {
+        LOGGER.info("Validating if the author's, " + authorName.getText() + ", posts contains the article: " + article);
         for (WebElement articleTitle : articles) {
             listHasElement(articles, articleTitle);
         }

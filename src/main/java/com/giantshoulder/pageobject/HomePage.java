@@ -15,21 +15,15 @@ public class HomePage extends BasePage {
     @FindBy(id = "menu-item-811183")
     private WebElement blogMenuItem;
 
+    public void navigateToPage(PageType pageType) {
+        LOGGER.info("Navigating to " + pageType + " page.");
+        driver.navigate().to(BASE_URL + pageType.getUrlFragment());
+    }
+
     public void acceptDataConsentPanel() {
         LOGGER.info("Accepting the data consent panel.");
         waitForElementToBeVisible(dataConsentButton, driver);
         clickOn(dataConsentButton, driver);
-    }
-
-    public void clickOnBlogMenuItem() {
-        LOGGER.info("Clicking on the 'Blog' menu item");
-        clickOn(blogMenuItem, driver);
-    }
-
-    public void clickOnBlogPage(PageType pageType) {
-        LOGGER.info("Clicking on the '" + pageType + "' page.");
-        String urlFragment = pageType.getUrlFragment();
-        driver.navigate().to(BASE_URL + urlFragment);
     }
 
     public HomePage(ChromeDriver driver) {

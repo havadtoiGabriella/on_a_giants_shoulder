@@ -9,21 +9,18 @@ import org.openqa.selenium.support.FindBy;
 
 public class BlogPage extends BasePage {
     private final By articleTitle = By.cssSelector("h6 a");
+    private static String currentArticleTitle;
 
     @FindBy(css = "h6 a")
     List<WebElement> articleTitles;
 
-    @FindBy(xpath = "//a[text()='See Older Posts']")
+    @FindBy(css = "[href='javascript:void(0);']")
     WebElement seeOlderPostsButton;
 
-    public void clickOnArticle(String articleTitle) {
-        LOGGER.info("Opening the article with the title '" + articleTitle + "'");
-        for (WebElement title : articleTitles) {
-            if (title.getText().equals(articleTitle)) {
-                clickOn(title, driver);
-                break;
-            }
-        }
+    public void clickOnArticle(int index) {
+        LOGGER.info("Opening the article with the title '" + articleTitles.get(index).getText() + "'");
+        currentArticleTitle = articleTitles.get(index).getText();
+        clickOn(articleTitles.get(index), driver);
     }
 
     public void clickOnSeeOlderPostsButton() {
@@ -32,6 +29,9 @@ public class BlogPage extends BasePage {
         scrollIntoView(seeOlderPostsButton, driver);
         clickOn(seeOlderPostsButton, driver);
         waitForNumberOfElementsToBeMoreThan(size, articleTitle, driver);
+    }
+    public static String getCurrentArticleTitle(){
+        return currentArticleTitle;
     }
 
     public BlogPage(ChromeDriver driver) {
