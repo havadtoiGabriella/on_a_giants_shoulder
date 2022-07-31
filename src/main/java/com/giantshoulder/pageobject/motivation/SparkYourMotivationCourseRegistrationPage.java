@@ -2,6 +2,7 @@ package com.giantshoulder.pageobject.motivation;
 
 import static com.giantshoulder.util.WebElementHandler.*;
 import com.giantshoulder.pageobject.BasePage;
+import com.giantshoulder.registrationdatatype.RegistrationData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,15 +25,15 @@ public class SparkYourMotivationCourseRegistrationPage extends BasePage {
     @FindBy(id = "button-79065")
     private WebElement registerButton;
 
-    public void registerUser(String name, String email, String option) {
+    public void registerUser(RegistrationData user) {
         LOGGER.info("Waiting for registration panel to be visible.");
         waitForRegistrationPanel();
-        LOGGER.info("Filling name field with '" + name + "'");
-        fillNameFieldWith(name);
-        LOGGER.info("Filling email field with '" + email + "'");
-        fillEmailFieldWith(email);
-        LOGGER.info("Selecting from dropdown by visible name: '" + option + "'");
-        fromDropdownSelect(option);
+        LOGGER.info("Filling name field with '" + user.getName() + "'");
+        fillNameFieldWith(user.getName());
+        LOGGER.info("Filling email field with '" + user.getEmail() + "'");
+        fillEmailFieldWith(user.getEmail());
+        LOGGER.info("Selecting from dropdown by visible name: '" + user.getDate() + "'");
+        fromDropdownSelect(user.getDate());
         LOGGER.info("Clicking on the registration button");
         clickOnRegisterButton();
     }

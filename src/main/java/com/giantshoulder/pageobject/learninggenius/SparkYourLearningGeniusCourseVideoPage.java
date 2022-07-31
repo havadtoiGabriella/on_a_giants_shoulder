@@ -14,19 +14,24 @@ public class SparkYourLearningGeniusCourseVideoPage extends BasePage {
     private WebElement video;
 
     public void validatingIfCorrectVideoIsDisplayed() {
+        LOGGER.info("Waiting for page to load");
+        waitForPageToLoad();
         LOGGER.info("Validating if correct page is loaded");
-        validatingIfCorrectPageIsLoaded();
+        validatingIfPageTitleIsCorrect();
         LOGGER.info("Waiting for the video to be visible.");
         validatingIfVideoIsDisplayed();
     }
 
-    private void validatingIfCorrectPageIsLoaded() {
+    private void waitForPageToLoad() {
+        waitForElementToBeVisible(video, driver);
+    }
+
+    private void validatingIfPageTitleIsCorrect() {
         String pageTitle = "Spark Your Learning Genius - A Lifehack Fast-Track Class";
         validatePageTitle(pageTitle, driver);
     }
 
     private void validatingIfVideoIsDisplayed() {
-        waitForElementToBeVisible(video, driver);
         elementIsDisplayed(video);
     }
 

@@ -8,8 +8,8 @@ public class SparkYourMotivationRegistrationPageStep extends BaseStepDefinition 
     private final SparkYourMotivationCourseRegistrationPage sparkYourMotivationCourseRegistrationPage
             = new SparkYourMotivationCourseRegistrationPage(driver);
 
-    @When("I register for the '3 Steps To Spark Your Motivation' course with {registrationData}")
-    public void i_register_for_the_3_steps_to_spark_your_motivation_course(RegistrationData USER) {
-        sparkYourMotivationCourseRegistrationPage.registerUser(USER.getName(), USER.getEmail(), USER.getDate());
+    @When("I register for the '3 Steps To Spark Your Motivation' course with {}")
+    public void i_register_for_the_3_steps_to_spark_your_motivation_course(RegistrationData user) {
+        sparkYourMotivationCourseRegistrationPage.registerUser(user);
     }
 }
