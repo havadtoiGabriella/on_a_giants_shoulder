@@ -1,10 +1,10 @@
 Feature: Header test
 
-  Scenario: Click on page logo
+  Scenario: Page logo validation
     Given I navigate to the main page
     And I accept the data handling dialog box
     When I hover over the page logo
-    Then the page logo url should point to the home page
+    Then the page logo url should point to the Home Page
 
   Scenario Outline: Navigation bar validation
     Given I navigate to the main page
@@ -19,6 +19,12 @@ Feature: Header test
       | Lifehack Show    | https://www.lifehack.org/lifehackshow                                             |
       | Shop             | https://shop.lifehack.org/?utm_source=blog&utm_medium=navbar&utm_campaign=default |
       | Login            | https://academy.lifehack.org/sign_in                                              |
+
+    Scenario: Subscribe button validation
+      Given I navigate to the main page
+      And I accept the data handling dialog box
+      When I wait until the page is fully loaded
+      Then the Subscribe button should be displayed
 
   Scenario Outline: <navbar menu item> navbar menu item dropdown validation
     Given I navigate to the main page

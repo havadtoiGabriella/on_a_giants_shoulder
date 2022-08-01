@@ -11,9 +11,6 @@ public class HomePage extends BasePage {
     @FindBy(css = ".fc-button.fc-cta-consent.fc-primary-button")
     private WebElement dataConsentButton;
 
-    @FindBy(id = "element3421730-content")
-    private WebElement subscribeButton;
-
     public void acceptDataConsentPanel() {
         LOGGER.info("Accepting data consent panel");
         waitForElementToBeVisible(dataConsentButton, driver);

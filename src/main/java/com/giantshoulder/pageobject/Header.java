@@ -3,18 +3,18 @@ package com.giantshoulder.pageobject;
 import static com.giantshoulder.util.WebElementAssertions.elementHasCorrectUrl;
 import static com.giantshoulder.util.WebElementAssertions.elementIsDisplayed;
 import static com.giantshoulder.util.WebElementHandler.hoverOver;
+import static com.giantshoulder.util.WebElementHandler.waitForElementToBeVisible;
 import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class Header extends BasePage {
-    static final String BASE_URL = "https://www.lifehack.org/";
 
     @FindBy(className = "navbar-brand")
     WebElement logo;
 
-    @FindBy(xpath = "//ul[@id='main-menu']/li/a")
+    @FindBy(css = "#main-menu > li > a")
     List<WebElement> navbarMenuItems;
 
     @FindBy(className = "dropdown-menu")
@@ -26,37 +26,43 @@ public class Header extends BasePage {
     @FindBy(css = "#menu-item-811183 .dropdown-menu")
     WebElement dropdownForBlog;
 
-    @FindBy(xpath = "//ul[@class='dropdown-menu show']/li/a")
+    @FindBy(css = ".dropdown-menu.show > li > a")
     List<WebElement> dropdownMenuItems;
+
+    @FindBy(id = "element3421730-content")
+    private WebElement subscribeButton;
 
     public void hoverOverPageLogo() {
         hoverOver(logo, driver);
     }
 
-    public void checkIfLogosUrlPointsToTheHomaPage() {
+    public void checkIfLogoUrlPointsToTheHomaPage() {
         LOGGER.info("Checking if page logo url points to the home page");
-        elementHasCorrectUrl(BASE_URL, logo);
+        String homePageUrl = "https://www.lifehack.org/";
+        elementHasCorrectUrl(homePageUrl, logo);
     }
 
     public void hoverOverMenuElement(String element) {
-        LOGGER.info("Hovering over the " + element + " menu item");
+        LOGGER.info("Hovering over the " + element + "navbar menu item");
         for (WebElement menuItem : navbarMenuItems) {
             if (menuItem.getAttribute("title").equals(element)) {
                 hoverOver(menuItem, driver);
+                break;
             }
         }
     }
 
     public void checkIfNavbarMenuItemUrlPointsToTheRightPage(String element, String url) {
-        LOGGER.info("Checking if " + element + " menu item has the correct url: " + url);
+        LOGGER.info("Checking if " + element + " navbar menu item has the correct url: " + url);
         for (WebElement menuItem : navbarMenuItems) {
             if (menuItem.getAttribute("title").equals(element)) {
                 elementHasCorrectUrl(url, menuItem);
+                break;
             }
         }
     }
 
-    public void checkIfDropDownIsOpen(String navbarMenuItem) {
+    public void checkIfDropDownIsOpenFor(String navbarMenuItem) {
         LOGGER.info("Checking if dropdown for " + navbarMenuItem + " navbar menu is open");
         switch (navbarMenuItem) {
             case "Start Here":
@@ -72,12 +78,23 @@ public class Header extends BasePage {
     }
 
     public void checkIfDropdownItemUrlPointsToTheRightPage(String element, String url) {
-        LOGGER.info("Checking if " + element + " menu item has the correct url: " + url);
+        LOGGER.info("Checking if " + element + " dropdown menu item has the correct url: " + url);
         for (WebElement menuItem : dropdownMenuItems) {
             if (menuItem.getAttribute("title").equals(element)) {
                 elementHasCorrectUrl(url, menuItem);
+                break;
             }
         }
+    }
+
+    public void waitForSubscribeButtonToBeVisible() {
+        LOGGER.info("Waiting for Subscribe button to be visible");
+        waitForElementToBeVisible(subscribeButton, driver);
+    }
+
+    public void checkIfSubscribeButtonIsDisplayed() {
+        LOGGER.info("Checking if Subscribe button is displayed");
+        elementIsDisplayed(subscribeButton);
     }
 
     public Header(ChromeDriver driver) {

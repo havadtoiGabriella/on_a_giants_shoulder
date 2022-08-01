@@ -13,9 +13,9 @@ public class HeaderStep extends BaseStepDefinition {
         header.hoverOverPageLogo();
     }
 
-    @Then("the page logo url should point to the home page")
+    @Then("the page logo url should point to the Home Page")
     public void the_page_logo_url_should_point_to_the_home_page() {
-        header.checkIfLogosUrlPointsToTheHomaPage();
+        header.checkIfLogoUrlPointsToTheHomaPage();
     }
 
     @When("I hover over the {string} navbar menu item")
@@ -30,11 +30,21 @@ public class HeaderStep extends BaseStepDefinition {
 
     @Then("a dropdown for {string} should open with the menu items")
     public void a_dropdown_should_open_with_the_menu_items(String navbarMenuItem) {
-        header.checkIfDropDownIsOpen(navbarMenuItem);
+        header.checkIfDropDownIsOpenFor(navbarMenuItem);
     }
 
     @And("dropdown {string} menu item {string} url should point to the right page")
-    public void dropdown_menu_item_url_should_point_to_the_right_page(String menuItem, String url) {
+    public void dropdown_x_menu_item_y_url_should_point_to_the_right_page(String menuItem, String url) {
         header.checkIfDropdownItemUrlPointsToTheRightPage(menuItem, url);
+    }
+
+    @When("I wait until the page is fully loaded")
+    public void i_wait_until_the_page_is_fully_loaded() {
+        header.waitForSubscribeButtonToBeVisible();
+    }
+
+    @Then("the Subscribe button should be displayed")
+    public void the_subscribe_button_should_be_displayed() {
+        header.checkIfSubscribeButtonIsDisplayed();
     }
 }
