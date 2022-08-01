@@ -46,4 +46,14 @@ public class FooterStep extends BaseStepDefinition {
     public void i_click_on_the_privacy_policy_link() {
         footer.clickOnPrivacyPolicyLink();
     }
+
+    @When("I scroll down to the footer of the page")
+    public void i_scroll_down_to_the_footer_of_the_page() {
+        footer.scrollToFooter();
+    }
+
+    @Then("the copyright text should be displayed")
+    public void the_copyright_text_should_be_displayed() {
+        footer.checkIfCopyrightTextIsDisplayed();
+    }
 }

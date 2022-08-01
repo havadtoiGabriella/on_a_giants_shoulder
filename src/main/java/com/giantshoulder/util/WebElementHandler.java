@@ -3,7 +3,9 @@ package com.giantshoulder.util;
 import static java.time.Duration.ofSeconds;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
+import java.util.List;
 import com.giantshoulder.logger.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -32,9 +34,12 @@ public final class WebElementHandler {
 
     public static void hoverOver(WebElement element, ChromeDriver driver) {
         LOGGER.debug("Hovering over the element.");
-        WebDriverWait wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
-        wait.withTimeout(ofSeconds(WAIT_TIMEOUT)).until(elementToBeClickable(element));
         Actions actions = new Actions(driver);
         actions.moveToElement(element).perform();
+    }
+
+    public static void scrollTo(WebElement element, ChromeDriver driver) {
+        LOGGER.debug("Scrolling down to element.");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 }

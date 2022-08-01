@@ -1,8 +1,8 @@
 package com.giantshoulder.pageobject;
 
 import static com.giantshoulder.util.WebElementAssertions.elementHasCorrectUrl;
-import static com.giantshoulder.util.WebElementHandler.clickOn;
-import static com.giantshoulder.util.WebElementHandler.hoverOver;
+import static com.giantshoulder.util.WebElementAssertions.elementIsDisplayed;
+import static com.giantshoulder.util.WebElementHandler.*;
 import java.util.List;
 import com.giantshoulder.util.WebElementHandler;
 import org.openqa.selenium.WebElement;
@@ -25,6 +25,9 @@ public class Footer extends BasePage {
 
     @FindBy(id = "menu-item-786463")
     private WebElement privacyPolicyLink;
+
+    @FindBy(className = "copyright")
+    private WebElement copyright;
 
     public void hoverOverMainMenuItem(String mainMenuItem) {
         LOGGER.info("Hovering over the " + mainMenuItem + " main footer menu item");
@@ -93,7 +96,17 @@ public class Footer extends BasePage {
 
     public void clickOnPrivacyPolicyLink() {
         LOGGER.info("Clicking on the Privacy Policy link");
-        WebElementHandler.clickOn(privacyPolicyLink, driver);
+        clickOn(privacyPolicyLink, driver);
+    }
+
+    public void scrollToFooter() {
+        LOGGER.info("Scrolling down to the footer of the page");
+        scrollTo(termsAndConditionsLink, driver);
+    }
+
+    public void checkIfCopyrightTextIsDisplayed() {
+        LOGGER.info("Checking if copyright text is displayed");
+        elementIsDisplayed(copyright);
     }
 
     public Footer(ChromeDriver driver) {

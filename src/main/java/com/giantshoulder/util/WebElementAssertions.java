@@ -19,4 +19,9 @@ public final class WebElementAssertions {
         LOGGER.debug("Checking if element has text");
         assertThat(element.getText().contains(expectedText)).isTrue();
     }
+
+    public static void elementIsDisplayed(WebElement element) {
+        LOGGER.debug("Checking if element is displayed");
+        assertThat(element.isDisplayed()).isTrue();
+    }
 }

@@ -69,3 +69,9 @@ Feature: Footer test
     And I accept the data handling dialog box
     When I click on the Privacy Policy link
     Then the page for Privacy Policy should open
+
+  Scenario: Copyright text validation
+    Given I navigate to the main page
+    And I accept the data handling dialog box
+    When I scroll down to the footer of the page
+    Then the copyright text should be displayed
