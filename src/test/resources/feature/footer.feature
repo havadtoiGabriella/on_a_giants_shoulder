@@ -44,3 +44,28 @@ Feature: Footer test
       | FAQ                                      | https://help.lifehack.org/                                         |
       | Facebook                                 | https://www.facebook.com/lifehackorg/                              |
       | Instagram                                | https://instagram.com/lifehackorg                                  |
+
+  Scenario Outline: <social link> link url validation
+    Given I navigate to the main page
+    And I accept the data handling dialog box
+    When I hover over the "<social link>" link
+    Then  "<social link>" link "<url>" url should point to the right page
+    Examples:
+      | social link | url                                       |
+      | facebook    | https://www.facebook.com/lifehackorg/     |
+      | twitter     | https://twitter.com/lifehackorg/          |
+      | pinterest   | https://pinterest.com/lifehack/           |
+      | youtube     | https://www.youtube.com/user/LifehackOrg/ |
+      | instagram   | https://instagram.com/lifehackorg         |
+
+  Scenario: Terms and Conditions link validation
+    Given I navigate to the main page
+    And I accept the data handling dialog box
+    When I click on the Terms and Conditions link
+    Then the page for Terms and Conditions should open
+
+  Scenario: Privacy Policy link validation
+    Given I navigate to the main page
+    And I accept the data handling dialog box
+    When I click on the Privacy Policy link
+    Then the page for Privacy Policy should open

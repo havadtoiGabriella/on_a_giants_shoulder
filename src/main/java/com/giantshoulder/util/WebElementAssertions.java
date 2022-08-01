@@ -15,8 +15,8 @@ public final class WebElementAssertions {
         assertThat(element.getAttribute("href")).isEqualTo(expectedUrl);
     }
 
-    public static void elementIsDisplayed(WebElement element) {
-        LOGGER.debug("Checking if element is displayed");
-        assertThat(element.isDisplayed()).isTrue();
+    public static void elementHasText(String expectedText, WebElement element) {
+        LOGGER.debug("Checking if element has text");
+        assertThat(element.getText().contains(expectedText)).isTrue();
     }
 }

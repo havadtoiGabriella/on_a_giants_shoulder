@@ -13,17 +13,37 @@ public class FooterStep extends BaseStepDefinition {
     }
 
     @Then("{string} main menu item {string} url should point to the right page")
-    public void menu_item_url_should_point_to_the_right_page(String mainMenuItem, String url) {
+    public void x_menu_item_y_url_should_point_to_the_right_page(String mainMenuItem, String url) {
         footer.checkIfFooterMainMenuItemUrlPointsToTheRightPage(mainMenuItem, url);
     }
 
     @When("I hover over the {string} sub-menu item")
-    public void i_hover_over_the_main_menu_item_sub_menu_item(String subMenuItem) {
+    public void i_hover_over_the_x_sub_menu_item(String subMenuItem) {
         footer.hoverOverSubMenuItem(subMenuItem);
     }
 
     @Then("{string} sub-menu item {string} url should point to the right page")
-    public void subMenuItemUrlShouldPointToTheRightPage(String subMenuItem, String url) {
+    public void x_sub_menu_item_y_url_should_point_to_the_right_page(String subMenuItem, String url) {
         footer.checkIfSubMenuItemUrlPointsToTheRightPage(subMenuItem, url);
+    }
+
+    @When("I hover over the {string} link")
+    public void i_hover_over_x_the_link(String socialLink) {
+        footer.hoverOverSocialLink(socialLink);
+    }
+
+    @Then("{string} link {string} url should point to the right page")
+    public void x_link_y_url_should_point_to_the_right_page(String socialLink, String url) {
+        footer.checkIfSocialLinkUrlPointsToTheRightPage(socialLink, url);
+    }
+
+    @When("I click on the Terms and Conditions link")
+    public void i_click_on_the_terms_and_conditions_link() {
+        footer.clickOnTermsAndConditionsLink();
+    }
+
+    @When("I click on the Privacy Policy link")
+    public void i_click_on_the_privacy_policy_link() {
+        footer.clickOnPrivacyPolicyLink();
     }
 }

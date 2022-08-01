@@ -1,8 +1,10 @@
 package com.giantshoulder.pageobject;
 
 import static com.giantshoulder.util.WebElementAssertions.elementHasCorrectUrl;
+import static com.giantshoulder.util.WebElementHandler.clickOn;
 import static com.giantshoulder.util.WebElementHandler.hoverOver;
 import java.util.List;
+import com.giantshoulder.util.WebElementHandler;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
@@ -10,14 +12,19 @@ import org.openqa.selenium.support.FindBy;
 public class Footer extends BasePage {
 
     @FindBy(css = "#footer-menu > li > a")
-    List<WebElement> footerMainMenuItems;
+    private List<WebElement> footerMainMenuItems;
 
     @FindBy(css = "#footer-menu ul > li > a")
-    List<WebElement> subMenuItems;
+    private List<WebElement> subMenuItems;
 
-    public Footer(ChromeDriver driver) {
-        super(driver);
-    }
+    @FindBy(css = ".social-links a")
+    private List<WebElement> socialLinks;
+
+    @FindBy(id = "menu-item-786461")
+    private WebElement termsAndConditionsLink;
+
+    @FindBy(id = "menu-item-786463")
+    private WebElement privacyPolicyLink;
 
     public void hoverOverMainMenuItem(String mainMenuItem) {
         LOGGER.info("Hovering over the " + mainMenuItem + " main footer menu item");
@@ -57,5 +64,39 @@ public class Footer extends BasePage {
                 break;
             }
         }
+    }
+
+    public void hoverOverSocialLink(String link) {
+        LOGGER.info("Hovering over " + link + " sub menu item");
+        for (WebElement socialLink : socialLinks) {
+            if (socialLink.getAttribute("href").contains(link)) {
+                hoverOver(socialLink, driver);
+                break;
+            }
+        }
+    }
+
+    public void checkIfSocialLinkUrlPointsToTheRightPage(String link, String url) {
+        LOGGER.info("Checking if " + link + " link has the correct url: " + url);
+        for (WebElement socialLink : socialLinks) {
+            if (socialLink.getAttribute("href").contains(link)) {
+                elementHasCorrectUrl(url, socialLink);
+                break;
+            }
+        }
+    }
+
+    public void clickOnTermsAndConditionsLink() {
+        LOGGER.info("Clicking on the Terms and Conditions link");
+        clickOn(termsAndConditionsLink, driver);
+    }
+
+    public void clickOnPrivacyPolicyLink() {
+        LOGGER.info("Clicking on the Privacy Policy link");
+        WebElementHandler.clickOn(privacyPolicyLink, driver);
+    }
+
+    public Footer(ChromeDriver driver) {
+        super(driver);
     }
 }
