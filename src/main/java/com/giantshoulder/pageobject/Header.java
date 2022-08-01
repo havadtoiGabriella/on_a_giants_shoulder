@@ -1,6 +1,7 @@
 package com.giantshoulder.pageobject;
 
 import static com.giantshoulder.util.WebElementAssertions.elementHasCorrectUrl;
+import static com.giantshoulder.util.WebElementAssertions.elementIsDisplayed;
 import static com.giantshoulder.util.WebElementHandler.clickOn;
 import static com.giantshoulder.util.WebElementHandler.hoverOver;
 import java.util.List;
@@ -14,15 +15,14 @@ public class Header extends BasePage {
     @FindBy(className = "navbar-brand")
     WebElement logo;
 
-    @FindBy(id = "menu-item-851362")
-    WebElement startHereMenuItem;
-
     @FindBy(xpath = "//ul[@id='main-menu']/li/a")
-    List<WebElement> menuItems;
+    List<WebElement> navbarMenuItems;
 
-    public void clickOnPageLogo() {
-        clickOn(logo, driver);
-    }
+    @FindBy(className = "dropdown-menu")
+    WebElement dropdownMenu;
+
+    @FindBy(xpath = "//ul[@class='dropdown-menu show']/li/a")
+    List<WebElement> dropdownMenuItems;
 
     public void hoverOverPageLogo() {
         hoverOver(logo, driver);
@@ -35,16 +35,30 @@ public class Header extends BasePage {
 
     public void hoverOverMenuElement(String element) {
         LOGGER.info("Hovering over the " + element + " menu item");
-        for (WebElement menuItem : menuItems) {
+        for (WebElement menuItem : navbarMenuItems) {
             if (menuItem.getAttribute("title").equals(element)) {
                 hoverOver(menuItem, driver);
             }
         }
     }
 
-    public void checkIfUrlPointsToTheRightPage(String element, String url) {
+    public void checkIfNavbarMenuItemUrlPointsToTheRightPage(String element, String url) {
         LOGGER.info("Checking if " + element + " menu item has the correct url: " + url);
-        for (WebElement menuItem : menuItems) {
+        for (WebElement menuItem : navbarMenuItems) {
+            if (menuItem.getAttribute("title").equals(element)) {
+                elementHasCorrectUrl(url, menuItem);
+            }
+        }
+    }
+
+    public void checkIfDropDownIsOpen() {
+        LOGGER.info("Checking if dropdown menu is open");
+        elementIsDisplayed(dropdownMenu);
+    }
+
+    public void checkIfDropdownItemUrlPointsToTheRightPage(String element, String url) {
+        LOGGER.info("Checking if " + element + " menu item has the correct url: " + url);
+        for (WebElement menuItem : dropdownMenuItems) {
             if (menuItem.getAttribute("title").equals(element)) {
                 elementHasCorrectUrl(url, menuItem);
             }

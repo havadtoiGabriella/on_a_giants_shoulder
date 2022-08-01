@@ -16,8 +16,13 @@ public final class WebElementAssertions {
                 .isEqualTo(expectedString);
     }
 
-    public static void elementHasCorrectUrl(String expectedUrl, WebElement element){
+    public static void elementHasCorrectUrl(String expectedUrl, WebElement element) {
         LOGGER.debug("Validating if the element url points to the right page");
         assertThat(element.getAttribute("href")).isEqualTo(expectedUrl);
+    }
+
+    public static void elementIsDisplayed(WebElement element) {
+        LOGGER.debug("Checking if element is displayed");
+        assertThat(element.isDisplayed()).isTrue();
     }
 }

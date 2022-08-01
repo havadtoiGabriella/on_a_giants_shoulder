@@ -7,7 +7,6 @@ import com.giantshoulder.logger.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public final class WebElementHandler {
@@ -31,21 +30,11 @@ public final class WebElementHandler {
         element.click();
     }
 
-    public static void sendKeysTo(WebElement inputField, String text) {
-        LOGGER.debug("Sending text to the element.");
-        inputField.sendKeys(text);
-    }
-
-    public static void selectByTextFrom(Select dropdown, String visibleText) {
-        LOGGER.debug("Selecting from element by visible text: " + visibleText + ".");
-        dropdown.selectByVisibleText(visibleText);
-    }
-
     public static void hoverOver(WebElement element, ChromeDriver driver) {
         LOGGER.debug("Hovering over the element.");
         WebDriverWait wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
         wait.withTimeout(ofSeconds(WAIT_TIMEOUT)).until(elementToBeClickable(element));
         Actions actions = new Actions(driver);
-        actions.moveToElement(element);
+        actions.moveToElement(element).perform();
     }
 }
