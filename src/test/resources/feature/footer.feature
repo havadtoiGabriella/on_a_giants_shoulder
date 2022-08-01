@@ -19,31 +19,31 @@ Feature: Footer test
     When I hover over the "<sub-menu item>" sub-menu item
     Then  "<sub-menu item>" sub-menu item "<url>" url should point to the right page
     Examples:
-      | sub-menu item                            | url                                                                |
-      | About Us                                 | https://www.lifehack.org/about                                     |
-      | Write for Us                             | https://www.lifehack.org/contribute                                |
-      | Lifehack Show                            | https://www.lifehack.org/lifehackshow                              |
-      | Lifehack Shop                            | https://shop.lifehack.org/                                         |
-      | Live a Full Life                         | https://www.lifehack.org/the-full-life-framework                   |
-      | Achieve Your Goals                       | https://www.lifehack.org/achieving-goals                           |
-      | Get Motivated                            | https://www.lifehack.org/motivation-guide-how-to-get-motivated     |
-      | Stay Focused                             | https://www.lifehack.org/how-to-focus                              |
-      | Learn Faster                             | https://www.lifehack.org/learn-faster                              |
-      | Get Fit                                  | https://www.lifehack.org/how-to-get-fit                            |
-      | Boost Your Energy                        | https://www.lifehack.org/boost-energy                              |
-      | Free Classes                             | https://www.lifehack.org/free-classes                              |
-      | Mastercourses                            | https://www.lifehack.org/courses                                   |
-      | Hacking Procrastination                  | https://start.lifehack.org/hacking-procrastination-register-y2uu5m |
-      | Full Life Framework: The Essential Guide | http://g.lifehack.org/full-life-framework-essential-guide          |
-      | Full Life Planner                        | https://shop.lifehack.org/products/the-full-life-planner           |
-      | Full Life Assessment                     | https://app.assessmentgenerator.com/assessment/7625?group=Blog     |
-      | Login                                    | https://academy.lifehack.org/sign_in                               |
-      | Full Life Framework                      | http://g.lifehack.org/full-life-framework-workshop                 |
-      | Make it Happen                           | http://g.lifehack.org/make-it-happen-special                       |
-      | Contact Us                               | https://www.lifehack.org/contact                                   |
-      | FAQ                                      | https://help.lifehack.org/                                         |
-      | Facebook                                 | https://www.facebook.com/lifehackorg/                              |
-      | Instagram                                | https://instagram.com/lifehackorg                                  |
+      | sub-menu item                            | url                                                            |
+      | About Us                                 | https://www.lifehack.org/about                                 |
+      | Write for Us                             | https://www.lifehack.org/contribute                            |
+      | Lifehack Show                            | https://www.lifehack.org/lifehackshow                          |
+      | Lifehack Shop                            | https://shop.lifehack.org/                                     |
+      | Live a Full Life                         | https://www.lifehack.org/the-full-life-framework               |
+      | Achieve Your Goals                       | https://www.lifehack.org/achieving-goals                       |
+      | Get Motivated                            | https://www.lifehack.org/motivation-guide-how-to-get-motivated |
+      | Stay Focused                             | https://www.lifehack.org/how-to-focus                          |
+      | Learn Faster                             | https://www.lifehack.org/learn-faster                          |
+      | Get Fit                                  | https://www.lifehack.org/how-to-get-fit                        |
+      | Boost Your Energy                        | https://www.lifehack.org/boost-energy                          |
+      | Free Classes                             | https://www.lifehack.org/free-classes                          |
+      | Mastercourses                            | https://www.lifehack.org/courses                               |
+      | Hacking Procrastination                  | http://g.lifehack.org/hacking-procrastination-class-register   |
+      | Full Life Framework: The Essential Guide | http://g.lifehack.org/full-life-framework-essential-guide      |
+      | Full Life Planner                        | https://shop.lifehack.org/products/the-full-life-planner       |
+      | Full Life Assessment                     | https://app.assessmentgenerator.com/assessment/7625?group=Blog |
+      | Login                                    | https://academy.lifehack.org/sign_in                           |
+      | Full Life Framework                      | http://g.lifehack.org/full-life-framework-workshop             |
+      | Make it Happen                           | http://g.lifehack.org/make-it-happen-special                   |
+      | Contact Us                               | https://www.lifehack.org/contact                               |
+      | FAQ                                      | https://help.lifehack.org/                                     |
+      | Facebook                                 | https://www.facebook.com/lifehackorg/                          |
+      | Instagram                                | https://instagram.com/lifehackorg                              |
 
   Scenario Outline: <social link> link url validation
     Given I navigate to the main page
