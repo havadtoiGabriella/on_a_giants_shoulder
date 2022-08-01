@@ -2,7 +2,6 @@ package com.giantshoulder.pageobject;
 
 import static com.giantshoulder.util.WebElementAssertions.elementHasCorrectUrl;
 import static com.giantshoulder.util.WebElementAssertions.elementIsDisplayed;
-import static com.giantshoulder.util.WebElementHandler.clickOn;
 import static com.giantshoulder.util.WebElementHandler.hoverOver;
 import java.util.List;
 import org.openqa.selenium.WebElement;
@@ -19,7 +18,13 @@ public class Header extends BasePage {
     List<WebElement> navbarMenuItems;
 
     @FindBy(className = "dropdown-menu")
-    WebElement dropdownMenu;
+    WebElement dropdownForStartHere;
+
+    @FindBy(css = "#menu-item-849490 .dropdown-menu")
+    WebElement dropdownForCourses;
+
+    @FindBy(css = "#menu-item-811183 .dropdown-menu")
+    WebElement dropdownForBlog;
 
     @FindBy(xpath = "//ul[@class='dropdown-menu show']/li/a")
     List<WebElement> dropdownMenuItems;
@@ -51,9 +56,19 @@ public class Header extends BasePage {
         }
     }
 
-    public void checkIfDropDownIsOpen() {
-        LOGGER.info("Checking if dropdown menu is open");
-        elementIsDisplayed(dropdownMenu);
+    public void checkIfDropDownIsOpen(String navbarMenuItem) {
+        LOGGER.info("Checking if dropdown for " + navbarMenuItem + " navbar menu is open");
+        switch (navbarMenuItem) {
+            case "Start Here":
+                elementIsDisplayed(dropdownForStartHere);
+                break;
+            case "Courses":
+                elementIsDisplayed(dropdownForCourses);
+                break;
+            case "Blog":
+                elementIsDisplayed(dropdownForBlog);
+                break;
+        }
     }
 
     public void checkIfDropdownItemUrlPointsToTheRightPage(String element, String url) {

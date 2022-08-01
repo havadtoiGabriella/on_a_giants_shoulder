@@ -28,9 +28,9 @@ public class HeaderStep extends BaseStepDefinition {
         header.checkIfNavbarMenuItemUrlPointsToTheRightPage(menuItem, url);
     }
 
-    @Then("a dropdown should open with the menu items")
-    public void a_dropdown_should_open_with_the_menu_items() {
-        header.checkIfDropDownIsOpen();
+    @Then("a dropdown for {string} should open with the menu items")
+    public void a_dropdown_should_open_with_the_menu_items(String navbarMenuItem) {
+        header.checkIfDropDownIsOpen(navbarMenuItem);
     }
 
     @And("dropdown {string} menu item {string} url should point to the right page")
