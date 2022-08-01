@@ -12,22 +12,22 @@ import org.openqa.selenium.support.FindBy;
 public class Header extends BasePage {
 
     @FindBy(className = "navbar-brand")
-    WebElement logo;
+    private WebElement logo;
 
     @FindBy(css = "#main-menu > li > a")
-    List<WebElement> navbarMenuItems;
+    private List<WebElement> navbarMenuItems;
 
     @FindBy(className = "dropdown-menu")
-    WebElement dropdownForStartHere;
+    private WebElement dropdownForStartHere;
 
     @FindBy(css = "#menu-item-849490 .dropdown-menu")
-    WebElement dropdownForCourses;
+    private WebElement dropdownForCourses;
 
     @FindBy(css = "#menu-item-811183 .dropdown-menu")
-    WebElement dropdownForBlog;
+    private WebElement dropdownForBlog;
 
     @FindBy(css = ".dropdown-menu.show > li > a")
-    List<WebElement> dropdownMenuItems;
+    private List<WebElement> dropdownMenuItems;
 
     @FindBy(id = "element3421730-content")
     private WebElement subscribeButton;
